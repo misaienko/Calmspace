@@ -77,6 +77,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="9wG-qs-bjx" kind="show" trigger="accessoryAction" id="Rei-yO-GDv"/>
                                 </connections>
@@ -88,6 +89,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.024402393849999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="9wG-qs-bjx" kind="show" trigger="accessoryAction" id="dNK-i1-QxB"/>
                                 </connections>
@@ -99,6 +101,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="9wG-qs-bjx" kind="show" trigger="accessoryAction" id="s5Y-cc-VLl"/>
                                 </connections>
@@ -110,6 +113,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -408,7 +412,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="ijA-iM-KxM"/>
         <segue reference="Rei-yO-GDv"/>
-        <segue reference="kMK-Tc-OfB"/>
+        <segue reference="4Xi-9e-R64"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="figure.arms.open" catalog="system" width="97" height="128"/>
@@ -419,6 +423,9 @@
         <image name="image5" width="1080" height="1920"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
