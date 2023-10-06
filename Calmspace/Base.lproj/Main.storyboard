@@ -64,52 +64,34 @@
         <!--Certain Practices-->
         <scene sceneID="4Ck-Hn-6Ji">
             <objects>
-                <tableViewController title="Certain Practices" id="Ta7-lj-Abr" sceneMemberID="viewController">
+                <tableViewController title="Certain Practices" id="Ta7-lj-Abr" customClass="PracticesTableViewController" customModule="Calmspace" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="5zC-rg-lWD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="B8i-Xz-exh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="B8i-Xz-exh" customClass="PracticesTableViewCell" customModule="Calmspace" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B8i-Xz-exh" id="FDT-i2-cVd">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y88-NN-6zp">
+                                            <rect key="frame" x="20" y="0.0" width="353" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="CellIdentifier"/>
                                 <connections>
+                                    <outlet property="cutomLabel1" destination="Y88-NN-6zp" id="T3U-1P-Z3r"/>
                                     <segue destination="9wG-qs-bjx" kind="show" trigger="accessoryAction" id="Rei-yO-GDv"/>
                                 </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tIW-AQ-BPz">
-                                <rect key="frame" x="0.0" y="93.666667938232422" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tIW-AQ-BPz" id="k87-tQ-pIu">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="9wG-qs-bjx" kind="show" trigger="accessoryAction" id="dNK-i1-QxB"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lp0-uV-gyg">
-                                <rect key="frame" x="0.0" y="137.33333587646484" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lp0-uV-gyg" id="4nZ-l7-JW1">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="9wG-qs-bjx" kind="show" trigger="accessoryAction" id="s5Y-cc-VLl"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hlz-pC-QR9">
-                                <rect key="frame" x="0.0" y="181.00000381469727" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hlz-pC-QR9" id="Zte-e5-kFp">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -121,7 +103,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYB-zA-GiW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5760" y="1575"/>
+            <point key="canvasLocation" x="5759.5419847328239" y="1574.6478873239437"/>
         </scene>
         <!--Nature Point-->
         <scene sceneID="Kld-wD-aTh">
@@ -209,7 +191,7 @@
                                 <rect key="frame" x="97" y="130" width="199" height="542"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kz-un-IMp">
-                                        <rect key="frame" x="0.0" y="0.0" width="199" height="104.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="199" height="153.33333333333334"/>
                                         <color key="tintColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Meditate">
@@ -220,7 +202,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-gk-zMW">
-                                        <rect key="frame" x="0.0" y="145.66666666666669" width="199" height="105"/>
+                                        <rect key="frame" x="0.0" y="194.33333333333331" width="199" height="153.33333333333331"/>
                                         <color key="tintColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Yoga">
@@ -230,19 +212,8 @@
                                             <segue destination="Ta7-lj-Abr" kind="show" id="qMG-V4-Lex"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unj-Je-Jlw">
-                                        <rect key="frame" x="0.0" y="291.66666666666669" width="199" height="104.66666666666669"/>
-                                        <color key="tintColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Breath">
-                                            <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <segue destination="Ta7-lj-Abr" kind="show" id="kMK-Tc-OfB"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0O-cY-AKy">
-                                        <rect key="frame" x="0.0" y="437.33333333333337" width="199" height="104.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="388.66666666666663" width="199" height="153.33333333333337"/>
                                         <color key="tintColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Nature Spot ">
@@ -255,7 +226,6 @@
                                 </subviews>
                                 <color key="tintColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="Unj-Je-Jlw" firstAttribute="height" secondItem="5ej-gk-zMW" secondAttribute="height" id="Anu-NU-ZIq"/>
                                     <constraint firstItem="k0O-cY-AKy" firstAttribute="height" secondItem="2Kz-un-IMp" secondAttribute="height" id="KEy-AT-JFj"/>
                                 </constraints>
                             </stackView>
@@ -407,11 +377,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ijA-iM-KxM"/>
-        <segue reference="Rei-yO-GDv"/>
-        <segue reference="kMK-Tc-OfB"/>
+        <segue reference="4Xi-9e-R64"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="figure.arms.open" catalog="system" width="97" height="128"/>
+        <image name="figure.arms.open" catalog="system" width="32" height="32"/>
         <image name="figure.mind.and.body" catalog="system" width="128" height="102"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="image2" width="1080" height="1920"/>
