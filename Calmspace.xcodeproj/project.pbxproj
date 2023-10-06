@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8424CA352AD0995200798593 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8424CA342AD0995200798593 /* Data.plist */; };
+		8424CA372AD0B76000798593 /* PracticesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424CA362AD0B76000798593 /* PracticesTableViewController.swift */; };
+		8424CA392AD0B78A00798593 /* PracticesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424CA382AD0B78A00798593 /* PracticesTableViewCell.swift */; };
 		848FEE202A64AF540098F198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE1F2A64AF540098F198 /* AppDelegate.swift */; };
 		848FEE222A64AF540098F198 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE212A64AF540098F198 /* SceneDelegate.swift */; };
 		848FEE242A64AF540098F198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE232A64AF540098F198 /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8424CA342AD0995200798593 /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		8424CA362AD0B76000798593 /* PracticesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesTableViewController.swift; sourceTree = "<group>"; };
+		8424CA382AD0B78A00798593 /* PracticesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesTableViewCell.swift; sourceTree = "<group>"; };
 		848FEE1C2A64AF540098F198 /* Calmspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calmspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848FEE1F2A64AF540098F198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848FEE212A64AF540098F198 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 				848FEE282A64AF580098F198 /* Assets.xcassets */,
 				848FEE2A2A64AF580098F198 /* LaunchScreen.storyboard */,
 				848FEE2D2A64AF580098F198 /* Info.plist */,
+				8424CA342AD0995200798593 /* Data.plist */,
+				8424CA362AD0B76000798593 /* PracticesTableViewController.swift */,
+				8424CA382AD0B78A00798593 /* PracticesTableViewCell.swift */,
 			);
 			path = Calmspace;
 			sourceTree = "<group>";
@@ -233,6 +242,7 @@
 			files = (
 				848FEE2C2A64AF580098F198 /* LaunchScreen.storyboard in Resources */,
 				848FEE292A64AF580098F198 /* Assets.xcassets in Resources */,
+				8424CA352AD0995200798593 /* Data.plist in Resources */,
 				848FEE272A64AF540098F198 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +270,9 @@
 			files = (
 				848FEE242A64AF540098F198 /* ViewController.swift in Sources */,
 				848FEE202A64AF540098F198 /* AppDelegate.swift in Sources */,
+				8424CA372AD0B76000798593 /* PracticesTableViewController.swift in Sources */,
 				848FEE222A64AF540098F198 /* SceneDelegate.swift in Sources */,
+				8424CA392AD0B78A00798593 /* PracticesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
