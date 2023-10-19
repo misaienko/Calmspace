@@ -108,14 +108,14 @@
                         <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="TW1-3M-nXd" customClass="PracticeTableViewCell" customModule="Calmspace" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="107.66666412353516"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TW1-3M-nXd" id="aV8-ZJ-DMx">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="107.66666412353516"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="108"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUt-4d-x2W">
-                                            <rect key="frame" x="20" y="40" width="353" height="27.666666666666671"/>
+                                            <rect key="frame" x="20" y="40" width="353" height="28"/>
                                             <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,14 +157,14 @@
                         <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsCell" id="NQ0-cg-VDI" customClass="DetailsTableViewCell" customModule="Calmspace" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="45"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="45.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NQ0-cg-VDI" id="O1r-5l-3Ja">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="45.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1C-bB-CCx">
-                                            <rect key="frame" x="20" y="10" width="353" height="25"/>
+                                            <rect key="frame" x="20" y="10.000000000000002" width="353" height="25.666666666666671"/>
                                             <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,7 +181,7 @@
                                 <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="detailsLabel" destination="Y1C-bB-CCx" id="cY9-69-vl0"/>
-                                    <segue destination="iCl-ZE-Vdh" kind="show" id="gDL-8W-d6r"/>
+                                    <segue destination="iCl-ZE-Vdh" kind="show" identifier="DisplaySegue" id="gDL-8W-d6r"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -199,7 +199,7 @@
         <!--Display View Controller-->
         <scene sceneID="8vH-2q-uFt">
             <objects>
-                <viewController id="iCl-ZE-Vdh" customClass="DisplayViewController" customModule="Calmspace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DisplayViewController" id="iCl-ZE-Vdh" customClass="DisplayViewController" customModule="Calmspace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vD4-Q1-suq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,6 @@
                     <navigationItem key="navigationItem" id="Umf-Mx-07y"/>
                     <connections>
                         <outlet property="actInt" destination="0Bg-zH-0xd" id="dah-os-7O7"/>
-                        <outlet property="webView" destination="p61-Ym-Wvo" id="9no-Oc-G1Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="os5-8r-Qrb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

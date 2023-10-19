@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class PracticeTableViewController: UITableViewController {
+// class PracticeTableViewController: UITableViewController {
     
     var practiceSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation", "Yoga: Beginner & All Levels", "Yoga: Medium & Advance Levels"]
     
@@ -52,7 +52,8 @@ class PracticeTableViewController: UITableViewController {
     
     
     
-    ///      var selectedArray: [String] = []
+   
+class PracticeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         
@@ -128,15 +129,15 @@ class PracticeTableViewController: UITableViewController {
         
         switch indexPath.row {
         case 0:
-            selectedArray = practiceData.dailyMeditation.map { $0.title }
-        case 1:
-            selectedArray = practiceData.yogaBeginnerAllLevels.map { $0.title }
-        case 2:
-            selectedArray = practiceData.yogaMediumAdvanceLevels.map { $0.title }
-        case 3:
             selectedArray = practiceData.morningMeditation.map { $0.title }
-        case 4:
+        case 1:
+            selectedArray = practiceData.dailyMeditation.map { $0.title }
+        case 2:
             selectedArray = practiceData.beforeSleepMeditation.map { $0.title }
+        case 3:
+            selectedArray = practiceData.yogaBeginnerAllLevels.map { $0.title }
+        case 4:
+            selectedArray = practiceData.yogaMediumAdvanceLevels.map { $0.title }
         default:
             break
         }
@@ -147,6 +148,8 @@ class PracticeTableViewController: UITableViewController {
             self.navigationController?.pushViewController(detailsViewController, animated: true)
         }
     }
+    
+    
     
 }
 
@@ -164,7 +167,10 @@ class PracticeTableViewController: UITableViewController {
      
      
      
-//     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
+  //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
+        
+
+    
              
         
     
