@@ -11,9 +11,10 @@ import Foundation
 // class PracticeTableViewController: UITableViewController {
     
     var practiceSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation", "Yoga: Beginner & All Levels", "Yoga: Medium & Advance Levels"]
-    
+
     var practiceData: Practice!
     
+    var showMeditationSections = false
     
     struct Practice: Codable {
         let dailyMeditation: [Meditation]
@@ -31,7 +32,8 @@ import Foundation
         }
     }
     struct Meditation: Codable {
-        let title, url, description: String
+        let title, description: String
+        let url: URL
         
         enum CodingKeys: String, CodingKey {
             case title = "Title"
@@ -41,8 +43,8 @@ import Foundation
     }
     
     struct YogaSession: Codable {
-        let title, url, description: String
-        
+        let title, description: String
+        let url: URL
         enum CodingKeys: String, CodingKey {
             case title = "Title"
             case url = "URL"
@@ -54,6 +56,11 @@ import Foundation
     
    
 class PracticeTableViewController: UITableViewController {
+    
+    
+    var meditationSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation"]
+    var yogaSections = ["Yoga: Beginner & All Levels", "Yoga: Medium & Advance Levels"]
+
     
     override func viewDidLoad() {
         
@@ -101,8 +108,12 @@ class PracticeTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 5
+        if showMeditationSections {
+                return meditationSections.count
+            } else {
+                return yogaSections.count
+            }
+     //   return 5
     }
     //      print("Number of rows in section \(section) called")
     
@@ -114,65 +125,87 @@ class PracticeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PracticeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PracticeCell", for: indexPath) as! PracticeTableViewCell
+           if showMeditationSections {
+               cell.customLabel.text = meditationSections[indexPath.row]
+           } else {
+               cell.customLabel.text = yogaSections[indexPath.row]
+           }
+           return cell
+       }
+        
+        
+        
+        
+        
+      /*  let cell = tableView.dequeueReusableCell(withIdentifier: "PracticeCell", for: indexPath) as! PracticeTableViewCell
         
         cell.customLabel.text = practiceSections[indexPath.row]
         
         return cell
     }
-    
+    */
     
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var selectedArray: [String] = []
+        var selectedArray: [PracticeDetail] = []
         
         switch indexPath.row {
         case 0:
-            selectedArray = practiceData.morningMeditation.map { $0.title }
+            selectedArray = practiceData.morningMeditation.map {
+                return PracticeDetail(title: $0.title, url: $0.url)
+            }
         case 1:
-            selectedArray = practiceData.dailyMeditation.map { $0.title }
+            selectedArray = practiceData.dailyMeditation.map {
+                return PracticeDetail(title: $0.title, url: $0.url)
+            }
         case 2:
-            selectedArray = practiceData.beforeSleepMeditation.map { $0.title }
+            selectedArray = practiceData.beforeSleepMeditation.map {
+                return PracticeDetail(title: $0.title, url: $0.url)
+            }
         case 3:
-            selectedArray = practiceData.yogaBeginnerAllLevels.map { $0.title }
+            selectedArray = practiceData.yogaBeginnerAllLevels.map {
+                return PracticeDetail(title: $0.title, url: $0.url)
+            }
         case 4:
-            selectedArray = practiceData.yogaMediumAdvanceLevels.map { $0.title }
+            selectedArray = practiceData.yogaMediumAdvanceLevels.map {
+                return PracticeDetail(title: $0.title, url: $0.url)
+            }
         default:
             break
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let detailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsTableViewController") as? DetailsTableViewController {
-            detailsViewController.selectedArray = selectedArray
-            self.navigationController?.pushViewController(detailsViewController, animated: true)
+            if let detailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsTableViewController") as? DetailsTableViewController {
+                detailsViewController.selectedArray = selectedArray
+                self.navigationController?.pushViewController(detailsViewController, animated: true)
+            }
         }
+    
+        
     }
     
     
-    
-}
-
-    
- //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
     
     
     
     // Now, you can pass selectedArray to DetailsTableViewController
     // and display the content.
-      
-     
-     
-     
-     
-     
-     
-  //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
-        
-
     
-             
-        
+    
+    
+    
+    
+    
+    
+    //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
+    
+    
+    
+    
+    
     
     
     
@@ -223,30 +256,33 @@ class PracticeTableViewController: UITableViewController {
      }
      */
     
-    /*
+   
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
+         
+    
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
+     
+    
+    
+    
+    /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     if segue.identifier == "ShowDetails" {
+     if let destinationVC = segue.destination as? DetailsTableViewController,
+     let selectedIndexPath = tableView.indexPathForSelectedRow {
+     
+     // Pass the selected array and its name to the details view controller
+     let selectedArray = arrays[selectedIndexPath.row]
+     destinationVC.selectedArray = selectedArray
+     destinationVC.arrayName = arrayNames[selectedIndexPath.row]
+     }
+     }
      }
      */
     
     
-  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowDetails" {
-            if let destinationVC = segue.destination as? DetailsTableViewController,
-               let selectedIndexPath = tableView.indexPathForSelectedRow {
-                
-                // Pass the selected array and its name to the details view controller
-                let selectedArray = arrays[selectedIndexPath.row]
-                destinationVC.selectedArray = selectedArray
-                destinationVC.arrayName = arrayNames[selectedIndexPath.row]
-            }
-        }
-   }
- */
-
     
-              
+

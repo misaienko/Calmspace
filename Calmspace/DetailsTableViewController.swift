@@ -8,12 +8,19 @@
 import UIKit
 import Foundation
 
+struct PracticeDetail {
+    let title: String
+    let url: URL
+}
+
+
+
 class DetailsTableViewController: UITableViewController {
     
     
-    var selectedArray: [String] = []
-    var practiceData: Practice!
-   
+    var selectedArray: [PracticeDetail] = []
+    
+    
     
     // Assuming you have the practiceData instance available
     
@@ -48,13 +55,13 @@ class DetailsTableViewController: UITableViewController {
     // Configure the cell...
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell", for: indexPath) as! DetailsTableViewCell
-        
-        cell.detailsLabel.text = selectedArray[indexPath.row]
+        cell.detailsLabel.text = selectedArray[indexPath.row].title
+        //     cell.detailsLabel.text = selectedArray[indexPath.row]
         
         return cell
     }
     
-  //  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    //  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -93,35 +100,53 @@ class DetailsTableViewController: UITableViewController {
     
     // MARK: - Navigation
     
-   /*   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          
-          if segue.identifier == "DisplaySegue",
-                 let displayVC = segue.destination as? DisplayViewController,
-                 let indexPath = tableView.indexPathForSelectedRow {
-                  let selectedItem = selectedArray[indexPath.row]
-                  if let selectedLink = selectedItem.url {
-                      displayVC.urlString = selectedLink
-                  }
-              }
-          
-    */
-      
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    /*   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     
+     if segue.identifier == "DisplaySegue",
+     let displayVC = segue.destination as? DisplayViewController,
+     let indexPath = tableView.indexPathForSelectedRow {
+     let selectedItem = selectedArray[indexPath.row]
+     if let selectedLink = selectedItem.url {
+     displayVC.urlString = selectedLink
+     }
+     }
+     
+     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        let selectedMeditation = selectedArray[indexPath.row]
+        let selectedLink = selectedMeditation.url
         
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
-    
-    
-    
-    
-    
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destination.
-    // Pass the selected object to the new view controller.
-    //   }
-    
-    
+        if let webVC = storyboard?.instantiateViewController(withIdentifier: "DisplayViewController") as? DisplayViewController {
+            webVC.url = selectedLink
+            navigationController?.pushViewController(webVC, animated: true)
+        }
+       
+        
+        // Assuming selectedItem contains the selected item with a link
+        
+        
+        
+        
+        
+        
+        //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
+        
+        
+        
+        
+        
+        
+        
+        // In a storyboard-based application, you will often want to do a little preparation before navigation
+        //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        //   }
+        
+        
+    }
     
     
 }
