@@ -12,9 +12,7 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
     
     var url: URL?
     
-    
     @IBOutlet weak var webView: WKWebView!
-    
     
     @IBOutlet weak var actInt: UIActivityIndicatorView!
     
@@ -41,14 +39,11 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
         
     }
     
-    
-  // override func loadView() {}
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         webView?.navigationDelegate = self
-       
+        
         // Check if webView is not nil before attempting to load a request
             if  let url = url {
                 print("Received URL: \(url)")
@@ -57,14 +52,14 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
             } else {
                 print("URL is nil")
             }
-        
-        
+            
         // Load the URL
-        if let url = url {
+     if let url = url {
             let request = URLRequest(url: url)
             webView.load(request)
         }
     }
+    
     // Do any additional setup after loading the view.
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
@@ -79,8 +74,6 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
         print("Web view failed to load with error: \(error.localizedDescription)")
     }
     
-    
-    
     /*
      // MARK: - Navigation
      
@@ -90,5 +83,4 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
      // Pass the selected object to the new view controller.
      }
      */
-    
 }

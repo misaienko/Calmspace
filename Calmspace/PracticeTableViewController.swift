@@ -7,14 +7,10 @@
 
 import UIKit
 import Foundation
-
-// class PracticeTableViewController: UITableViewController {
     
     var practiceSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation", "Yoga: Beginner & All Levels", "Yoga: Medium & Advance Levels"]
 
     var practiceData: Practice!
-    
-    var showMeditationSections = false
     
     struct Practice: Codable {
         let dailyMeditation: [Meditation]
@@ -23,44 +19,41 @@ import Foundation
         let morningMeditation: [Meditation]
         let beforeSleepMeditation: [Meditation]
         
-        enum CodingKeys: String, CodingKey {
-            case dailyMeditation = "Daily Meditation"
-            case yogaBeginnerAllLevels = "Yoga: Beginner & All Levels"
-            case yogaMediumAdvanceLevels = "Yoga: Medium & Advance Levels"
-            case morningMeditation = "Morning Meditation"
-            case beforeSleepMeditation = "Before Sleep Meditation"
+    enum CodingKeys: String, CodingKey {
+        case dailyMeditation = "Daily Meditation"
+        case yogaBeginnerAllLevels = "Yoga: Beginner & All Levels"
+        case yogaMediumAdvanceLevels = "Yoga: Medium & Advance Levels"
+        case morningMeditation = "Morning Meditation"
+        case beforeSleepMeditation = "Before Sleep Meditation"
         }
     }
     struct Meditation: Codable {
         let title, description: String
         let url: URL
         
-        enum CodingKeys: String, CodingKey {
-            case title = "Title"
-            case url = "URL"
-            case description = "Description"
+    enum CodingKeys: String, CodingKey {
+        case title = "Title"
+        case url = "URL"
+        case description = "Description"
         }
     }
     
     struct YogaSession: Codable {
         let title, description: String
         let url: URL
-        enum CodingKeys: String, CodingKey {
-            case title = "Title"
-            case url = "URL"
-            case description = "Description"
+        
+    enum CodingKeys: String, CodingKey {
+        case title = "Title"
+        case url = "URL"
+        case description = "Description"
         }
     }
     
-    
-    
-   
 class PracticeTableViewController: UITableViewController {
-    
     
     var meditationSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation"]
     var yogaSections = ["Yoga: Beginner & All Levels", "Yoga: Medium & Advance Levels"]
-
+    var showMeditationSections = false
     
     override func viewDidLoad() {
         
@@ -78,75 +71,53 @@ class PracticeTableViewController: UITableViewController {
             fatalError("Failed to decode Practice.json: \(error)")
         }
         
+        
     }
-    
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    
-    
-    
-    
-    
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        
-        //  print("Number of sections called")
         
         return 1
     }
     
-    //Return Array Names
-    
-    
-    
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if showMeditationSections {
-                return meditationSections.count
-            } else {
-                return yogaSections.count
-            }
-     //   return 5
+            
+            print("Returning \(meditationSections.count) rows for Meditation sections")
+            return meditationSections.count
+            
+        } else {
+            
+            print("Returning \(yogaSections.count) rows for Yoga sections")
+            return yogaSections.count
+        }
+        
     }
-    //      print("Number of rows in section \(section) called")
-    
-    
-    
-    // #warning Incomplete implementation, return the number of rows
-    
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PracticeCell", for: indexPath) as! PracticeTableViewCell
-           if showMeditationSections {
-               cell.customLabel.text = meditationSections[indexPath.row]
-           } else {
-               cell.customLabel.text = yogaSections[indexPath.row]
-           }
-           return cell
-       }
-        
-        
-        
-        
-        
-      /*  let cell = tableView.dequeueReusableCell(withIdentifier: "PracticeCell", for: indexPath) as! PracticeTableViewCell
-        
-        cell.customLabel.text = practiceSections[indexPath.row]
-        
+        if showMeditationSections {
+            print("Setting cell for Meditation section")
+            
+            cell.customLabel.text = meditationSections[indexPath.row]
+            
+        } else {
+            print("Setting cell for Yoga section")
+            cell.customLabel.text = yogaSections[indexPath.row]
+            
+        }
         return cell
     }
-    */
     
-    
+    /*  let cell = tableView.dequeueReusableCell(withIdentifier: "PracticeCell", for: indexPath) as! PracticeTableViewCell
+     
+     cell.customLabel.text = practiceSections[indexPath.row]
+     
+     return cell
+     }
+     */
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var selectedArray: [PracticeDetail] = []
@@ -177,50 +148,31 @@ class PracticeTableViewController: UITableViewController {
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let detailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsTableViewController") as? DetailsTableViewController {
-                detailsViewController.selectedArray = selectedArray
-                self.navigationController?.pushViewController(detailsViewController, animated: true)
-            }
+        if let detailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsTableViewController") as? DetailsTableViewController {
+            detailsViewController.selectedArray = selectedArray
+            self.navigationController?.pushViewController(detailsViewController, animated: true)
         }
-    
-        
     }
     
-    
-    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
-    
-    
-    
+    // override func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath) {}
     // Now, you can pass selectedArray to DetailsTableViewController
     // and display the content.
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "MeditationSegue" {
+            if let destinationVC = segue.destination as? PracticeTableViewController {
+                destinationVC.showMeditationSections = true
+            }
+        } else if segue.identifier == "YogaSegue" {
+            if let destinationVC = segue.destination as? PracticeTableViewController {
+                destinationVC.showMeditationSections = false
+            }
+        }
+    }
     
-    
-    
-    
-    
-    
-    //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
-    
-    
-    
-    
-    
-    
-    
-    
-    //   let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsTableViewController") as! DetailsTableViewController
-    //            detailsVC.details = values
-    //            navigationController?.pushViewController(detailsVC, animated: true)
-    
-    
-    
-    
-    
-    
+}
     // Configure the cell...
-    
-    
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -256,19 +208,15 @@ class PracticeTableViewController: UITableViewController {
      }
      */
     
-   
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
-         
+    // MARK: - Navigation
     
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
     
     
-    
+    // Get the new view controller using segue.destination.
+    // Pass the selected object to the new view controller.
+
     /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      if segue.identifier == "ShowDetails" {
      if let destinationVC = segue.destination as? DetailsTableViewController,
@@ -284,5 +232,5 @@ class PracticeTableViewController: UITableViewController {
      */
     
     
-    
+
 

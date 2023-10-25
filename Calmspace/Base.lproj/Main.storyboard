@@ -268,10 +268,10 @@
             </objects>
             <point key="canvasLocation" x="7133.5877862595416" y="1586.6197183098593"/>
         </scene>
-        <!--All Practices-->
+        <!--PList View Controller-->
         <scene sceneID="k7Q-jD-5P8">
             <objects>
-                <viewController storyboardIdentifier="PListViewController" title="All Practices" id="5je-gN-PIF" customClass="PListViewController" customModule="Calmspace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PListViewController" title="PList View Controller" id="5je-gN-PIF" customClass="PListViewController" customModule="Calmspace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gWn-qN-VRX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,7 +292,8 @@
                                             <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="jK4-4t-sI1" kind="show" identifier="MeditationSegue" id="jwt-iA-Sb3"/>
+                                            <action selector="meditationButtonPressed:" destination="5je-gN-PIF" eventType="touchUpInside" id="Xgl-ue-MFX"/>
+                                            <segue destination="jK4-4t-sI1" kind="show" identifier="MeditationSegue" id="5So-1c-tpy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-gk-zMW">
@@ -303,6 +304,7 @@
                                             <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
+                                            <action selector="yogaButtonPressed:" destination="5je-gN-PIF" eventType="touchUpInside" id="eGA-8y-Pa0"/>
                                             <segue destination="jK4-4t-sI1" kind="show" identifier="YogaSegue" id="mar-OT-iAn"/>
                                         </connections>
                                     </button>
@@ -466,7 +468,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ijA-iM-KxM"/>
-        <segue reference="mar-OT-iAn"/>
+        <segue reference="5So-1c-tpy"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="figure.arms.open" catalog="system" width="97" height="128"/>

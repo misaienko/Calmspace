@@ -15,43 +15,45 @@ class PListViewController: UIViewController {
     
     @IBOutlet weak var natureButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    print("View Did Load")
+        
     }
     
-    @IBAction func meditationButtonPressed(_ sender: UIButton) {
-   //  performSegue(withIdentifier: "MeditationSegue", sender: self)
-        if let destinationVC = storyboard?.instantiateViewController(withIdentifier: "PracticeTableViewController") as? PracticeTableViewController {
-                destinationVC.meditationSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation"]
-                navigationController?.pushViewController(destinationVC, animated: true)
-            }
+    @IBAction func meditationButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "MeditationSegue", sender: self)
     }
 
-    @IBAction func yogaButtonPressed(_ sender: UIButton) {
-   // performSegue(withIdentifier: "YogaSegue", sender: self)
-        if let destinationVC = storyboard?.instantiateViewController(withIdentifier: "PracticeTableViewController") as? PracticeTableViewController {
-            destinationVC.yogaSections = ["Yoga: Beginner & All Levels", "Yoga: Medium & Advance Levels"]
-                navigationController?.pushViewController(destinationVC, animated: true)
-            }
+    @IBAction func yogaButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "YogaSegue", sender: self)
     }
+    
+    /*   @IBAction func meditationButtonPressed(_ sender: UIButton) {
+        print("Meditation button pressed")
+        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "PracticeTableViewController") as! PracticeTableViewController
+           destinationVC.showMeditationSections = true
+           navigationController?.pushViewController(destinationVC, animated: true)
+       }
+     
+         @IBAction func yogaButtonPressed(_ sender: UIButton) {
+        print("Yoga button pressed")
+        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "PracticeTableViewController") as! PracticeTableViewController
+            destinationVC.showMeditationSections = false
+            navigationController?.pushViewController(destinationVC, animated: true)
+        }
+   
+    */
 
     @IBAction func natureButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "NatureSegue", sender: self)
     }
-
-   
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
- //   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
-     
-        
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-   
-  
-
+    // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
+    // Get the new view controller using segue.destination.
+    // Pass the selected object to the new view controller.
 }

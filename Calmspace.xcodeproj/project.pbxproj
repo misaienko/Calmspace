@@ -11,7 +11,7 @@
 		842C4BDF2ADF46B400EB9613 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C4BDE2ADF46B400EB9613 /* WebKit.framework */; };
 		842C4BE12ADF46BB00EB9613 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C4BE02ADF46BB00EB9613 /* MapKit.framework */; };
 		8430EF1B2AD49FFD00541107 /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8430EF1A2AD49FFD00541107 /* PracticeTableViewCell.swift */; };
-		845BEDA42ADA283D0083BB83 /* Practice.json in Resources */ = {isa = PBXBuildFile; fileRef = 845BEDA22ADA280F0083BB83 /* Practice.json */; };
+		845B54A92AE7373300AD844E /* Practice.json in Resources */ = {isa = PBXBuildFile; fileRef = 845B54A82AE7373300AD844E /* Practice.json */; };
 		84637CC72AE4E2CC00797103 /* PListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84637CC62AE4E2CC00797103 /* PListViewController.swift */; };
 		848FEE202A64AF540098F198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE1F2A64AF540098F198 /* AppDelegate.swift */; };
 		848FEE222A64AF540098F198 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE212A64AF540098F198 /* SceneDelegate.swift */; };
@@ -45,12 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		841B32C62ADDC422003E907E /* CustomManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomManager.swift; sourceTree = "<group>"; };
 		842C4BDB2ADF456700EB9613 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		842C4BDE2ADF46B400EB9613 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		842C4BE02ADF46BB00EB9613 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8430EF1A2AD49FFD00541107 /* PracticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTableViewCell.swift; sourceTree = "<group>"; };
-		845BEDA22ADA280F0083BB83 /* Practice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Practice.json; path = ../../Practice.json; sourceTree = "<group>"; };
+		845B54A82AE7373300AD844E /* Practice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Practice.json; sourceTree = "<group>"; };
 		84637CC62AE4E2CC00797103 /* PListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListViewController.swift; sourceTree = "<group>"; };
 		848FEE1C2A64AF540098F198 /* Calmspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calmspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848FEE1F2A64AF540098F198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,10 +140,9 @@
 				84C06F982AD4F01000AA3198 /* PracticeTableViewController.swift */,
 				84DDE9E32AD8896A00B59721 /* DetailsTableViewController.swift */,
 				84DDE9E52AD88AD300B59721 /* DetailsTableViewCell.swift */,
-				845BEDA22ADA280F0083BB83 /* Practice.json */,
-				841B32C62ADDC422003E907E /* CustomManager.swift */,
 				842C4BDB2ADF456700EB9613 /* DisplayViewController.swift */,
 				84637CC62AE4E2CC00797103 /* PListViewController.swift */,
+				845B54A82AE7373300AD844E /* Practice.json */,
 			);
 			path = Calmspace;
 			sourceTree = "<group>";
@@ -270,7 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845BEDA42ADA283D0083BB83 /* Practice.json in Resources */,
+				845B54A92AE7373300AD844E /* Practice.json in Resources */,
 				848FEE2C2A64AF580098F198 /* LaunchScreen.storyboard in Resources */,
 				848FEE292A64AF580098F198 /* Assets.xcassets in Resources */,
 				848FEE272A64AF540098F198 /* Main.storyboard in Resources */,
