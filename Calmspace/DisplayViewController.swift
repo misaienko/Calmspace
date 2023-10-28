@@ -10,7 +10,7 @@ import WebKit
 
 class DisplayViewController: UIViewController, WKNavigationDelegate {
     
-    var url: URL?
+    var link: URL?
     
     @IBOutlet weak var webView: WKWebView!
     
@@ -43,25 +43,21 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         
         webView?.navigationDelegate = self
-        
         // Check if webView is not nil before attempting to load a request
-            if  let url = url {
+            if  let url = link {
                 print("Received URL: \(url)")
                 let request = URLRequest(url: url)
                 webView.load(request)
             } else {
                 print("URL is nil")
             }
-            
         // Load the URL
-     if let url = url {
+     if let url = link {
             let request = URLRequest(url: url)
             webView.load(request)
         }
     }
-    
     // Do any additional setup after loading the view.
-    
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
             actInt.startAnimating()
         }
@@ -73,14 +69,4 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print("Web view failed to load with error: \(error.localizedDescription)")
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }

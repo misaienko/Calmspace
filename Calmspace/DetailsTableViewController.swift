@@ -22,8 +22,6 @@ class DetailsTableViewController: UITableViewController {
         
     }
     
-    // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -32,22 +30,20 @@ class DetailsTableViewController: UITableViewController {
         return selectedArray.count
     }
     
-    // Configure the cell...
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell", for: indexPath) as! DetailsTableViewCell
         cell.detailsLabel.text = selectedArray[indexPath.row].title
-        
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    
         let selectedMeditation = selectedArray[indexPath.row]
         let selectedLink = selectedMeditation.url
         
         if let webVC = storyboard?.instantiateViewController(withIdentifier: "DisplayViewController") as? DisplayViewController {
-            webVC.url = selectedLink
+            webVC.link = selectedLink
             navigationController?.pushViewController(webVC, animated: true)
         }
         

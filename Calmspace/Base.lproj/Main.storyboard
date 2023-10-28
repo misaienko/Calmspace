@@ -108,14 +108,14 @@
                         <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PracticeCell" id="TW1-3M-nXd" customClass="PracticeTableViewCell" customModule="Calmspace" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="108.33333587646484"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="108.66666412353516"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TW1-3M-nXd" id="aV8-ZJ-DMx">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="108.33333587646484"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="108.66666412353516"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUt-4d-x2W">
-                                            <rect key="frame" x="20" y="40" width="353" height="28.333333333333329"/>
+                                            <rect key="frame" x="20" y="40" width="353" height="28.666666666666671"/>
                                             <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,14 +157,14 @@
                         <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsCell" id="NQ0-cg-VDI" customClass="DetailsTableViewCell" customModule="Calmspace" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="45"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="45.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NQ0-cg-VDI" id="O1r-5l-3Ja">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="45.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1C-bB-CCx">
-                                            <rect key="frame" x="20" y="10" width="353" height="25"/>
+                                            <rect key="frame" x="20" y="10.000000000000002" width="353" height="25.666666666666671"/>
                                             <color key="backgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -292,8 +292,8 @@
                                             <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="meditationButtonPressed:" destination="5je-gN-PIF" eventType="touchUpInside" id="Xgl-ue-MFX"/>
-                                            <segue destination="jK4-4t-sI1" kind="show" identifier="MeditationSegue" id="5So-1c-tpy"/>
+                                            <action selector="meditationButtonPressed:" destination="5je-gN-PIF" eventType="touchUpInside" id="zA3-UV-x6t"/>
+                                            <segue destination="jK4-4t-sI1" kind="show" identifier="PracticeSegue" id="GqF-8Q-UHL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-gk-zMW">
@@ -304,8 +304,7 @@
                                             <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="yogaButtonPressed:" destination="5je-gN-PIF" eventType="touchUpInside" id="eGA-8y-Pa0"/>
-                                            <segue destination="jK4-4t-sI1" kind="show" identifier="YogaSegue" id="mar-OT-iAn"/>
+                                            <action selector="yogaButtonPressed:" destination="5je-gN-PIF" eventType="touchUpInside" id="3Ml-mw-TZV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0O-cY-AKy">
@@ -468,7 +467,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ijA-iM-KxM"/>
-        <segue reference="5So-1c-tpy"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="figure.arms.open" catalog="system" width="97" height="128"/>

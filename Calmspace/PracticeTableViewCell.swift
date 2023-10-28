@@ -9,7 +9,6 @@ import UIKit
 
 class PracticeTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var customLabel: UILabel!
 }
 

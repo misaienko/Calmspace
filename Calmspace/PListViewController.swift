@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Foundation
 
-class PListViewController: UIViewController {
+class PListViewController: UIViewController{
+    
+    var showMeditationSections = true
     
     @IBOutlet weak var meditationButton: UIButton!
     
@@ -23,37 +26,25 @@ class PListViewController: UIViewController {
     }
     
     @IBAction func meditationButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "MeditationSegue", sender: self)
-    }
+        showMeditationSections = true
+        print("Meditation button pressed. Setting showMeditationSections to true.")
+        performSegue(withIdentifier: "PracticeSegue", sender: self)
+            }
 
     @IBAction func yogaButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "YogaSegue", sender: self)
-    }
+        showMeditationSections = false
+        print("Yoga button pressed. Setting showMeditationSections to false.")
+        performSegue(withIdentifier: "PracticeSegue", sender: self)
+            }
     
-    /*   @IBAction func meditationButtonPressed(_ sender: UIButton) {
-        print("Meditation button pressed")
-        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "PracticeTableViewController") as! PracticeTableViewController
-           destinationVC.showMeditationSections = true
-           navigationController?.pushViewController(destinationVC, animated: true)
-       }
-     
-         @IBAction func yogaButtonPressed(_ sender: UIButton) {
-        print("Yoga button pressed")
-        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "PracticeTableViewController") as! PracticeTableViewController
-            destinationVC.showMeditationSections = false
-            navigationController?.pushViewController(destinationVC, animated: true)
-        }
-   
-    */
-
     @IBAction func natureButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "NatureSegue", sender: self)
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
-    // Get the new view controller using segue.destination.
-    // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Preparing for segue. Sending showMeditationSections:", showMeditationSections)
+            if let practiceTableVC = segue.destination as? PracticeTableViewController {
+                practiceTableVC.showMeditationSections = self.showMeditationSections
+            }
+        }
 }
