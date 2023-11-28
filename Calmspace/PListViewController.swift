@@ -10,41 +10,29 @@ import Foundation
 
 class PListViewController: UIViewController{
     
-    var showMeditationSections = true
-    
     @IBOutlet weak var meditationButton: UIButton!
     
     @IBOutlet weak var yogaButton: UIButton!
     
-    @IBOutlet weak var natureButton: UIButton!
+    var meditationTable: UITableView?
+    var yogaTable: UITableView?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    print("View Did Load")
-        
+    @IBAction func meditationPressed(_ sender: Any) {
+        print("Meditation button pressed")
+        performSegue(withIdentifier: "PracticeSegue", sender: "Meditation")
     }
     
-    @IBAction func meditationButtonPressed(_ sender: Any) {
-        showMeditationSections = true
-        print("Meditation button pressed. Setting showMeditationSections to true.")
-        performSegue(withIdentifier: "PracticeSegue", sender: self)
-            }
-
-    @IBAction func yogaButtonPressed(_ sender: Any) {
-        showMeditationSections = false
-        print("Yoga button pressed. Setting showMeditationSections to false.")
-        performSegue(withIdentifier: "PracticeSegue", sender: self)
-            }
-    
-    @IBAction func natureButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "NatureSegue", sender: self)
+    @IBAction func yogaPressed(_ sender: Any) {
+        print("Yoga button pressed")
+        performSegue(withIdentifier: "PracticeSegue", sender: "Yoga")
     }
-    
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Preparing for segue. Sending showMeditationSections:", showMeditationSections)
-            if let practiceTableVC = segue.destination as? PracticeTableViewController {
-                practiceTableVC.showMeditationSections = self.showMeditationSections
+        if segue.identifier == "PracticeSegue" {
+            if let practiceViewController = segue.destination as? PracticeViewController, let practiceType = sender as? String {
+                practiceViewController.practiceType = practiceType
             }
         }
+    }
+    
 }

@@ -6,17 +6,17 @@
 //
 
 import UIKit
-import Foundation
 
 struct PracticeDetail {
     let title: String
-    let url: URL
+    let youtubeLink: URL
 }
 
 class DetailsTableViewController: UITableViewController {
     
     var selectedArray: [PracticeDetail] = []
-    
+    var practiceType: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,21 +38,13 @@ class DetailsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-        let selectedMeditation = selectedArray[indexPath.row]
-        let selectedLink = selectedMeditation.url
-        
-        if let webVC = storyboard?.instantiateViewController(withIdentifier: "DisplayViewController") as? DisplayViewController {
-            webVC.link = selectedLink
-            navigationController?.pushViewController(webVC, animated: true)
+        print("DetailsViewController - didSelectRowAt")
+                if let displayViewController = storyboard?.instantiateViewController(withIdentifier: "DisplayViewController") as? DisplayViewController {
+                    let selectedMeditation = selectedArray[indexPath.row]
+                    displayViewController.link = selectedMeditation.youtubeLink
+                    navigationController?.pushViewController(displayViewController, animated: true)
+                }
+            }
         }
-        
-    }
-    
-}
-       
-
-        
-        
-        
+  
  

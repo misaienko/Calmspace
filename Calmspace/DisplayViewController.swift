@@ -42,22 +42,19 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("DisplayViewController - View Did Load")
+        print("DisplayViewController - link: \(String(describing: link))")
+        
         webView?.navigationDelegate = self
-        // Check if webView is not nil before attempting to load a request
-            if  let url = link {
-                print("Received URL: \(url)")
-                let request = URLRequest(url: url)
-                webView.load(request)
-            } else {
-                print("URL is nil")
-            }
-        // Load the URL
-     if let url = link {
+        if let url = link {
+            print("Received URL: \(url)")
             let request = URLRequest(url: url)
             webView.load(request)
+        } else {
+            print("URL is nil")
         }
     }
-    // Do any additional setup after loading the view.
+    
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
             actInt.startAnimating()
         }
