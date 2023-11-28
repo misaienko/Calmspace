@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842C4BDC2ADF456700EB9613 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C4BDB2ADF456700EB9613 /* DisplayViewController.swift */; };
+		842C4BDF2ADF46B400EB9613 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C4BDE2ADF46B400EB9613 /* WebKit.framework */; };
+		842C4BE12ADF46BB00EB9613 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C4BE02ADF46BB00EB9613 /* MapKit.framework */; };
+		843B4F842B09DB1800C658EB /* MeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B4F832B09DB1800C658EB /* MeditationCell.swift */; };
+		843B4F862B09DB3300C658EB /* YogaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B4F852B09DB3300C658EB /* YogaCell.swift */; };
+		845B54A92AE7373300AD844E /* Practice.json in Resources */ = {isa = PBXBuildFile; fileRef = 845B54A82AE7373300AD844E /* Practice.json */; };
+		84637CC72AE4E2CC00797103 /* PListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84637CC62AE4E2CC00797103 /* PListViewController.swift */; };
+		8479C6DC2B0C2B2A0022DC50 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9E7442B09AD5800C50648 /* PracticeViewController.swift */; };
 		848FEE202A64AF540098F198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE1F2A64AF540098F198 /* AppDelegate.swift */; };
 		848FEE222A64AF540098F198 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE212A64AF540098F198 /* SceneDelegate.swift */; };
 		848FEE242A64AF540098F198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE232A64AF540098F198 /* ViewController.swift */; };
@@ -16,6 +24,15 @@
 		848FEE372A64AF580098F198 /* CalmspaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE362A64AF580098F198 /* CalmspaceTests.swift */; };
 		848FEE412A64AF580098F198 /* CalmspaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE402A64AF580098F198 /* CalmspaceUITests.swift */; };
 		848FEE432A64AF580098F198 /* CalmspaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE422A64AF580098F198 /* CalmspaceUITestsLaunchTests.swift */; };
+		84979B952B13ECC600971AB1 /* FirstQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B942B13ECC600971AB1 /* FirstQViewController.swift */; };
+		84979B972B13ED1A00971AB1 /* SecondQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B962B13ED1A00971AB1 /* SecondQViewController.swift */; };
+		84979B992B13ED3000971AB1 /* ThirdQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B982B13ED3000971AB1 /* ThirdQViewController.swift */; };
+		84979B9B2B13ED7000971AB1 /* FourthQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B9A2B13ED7000971AB1 /* FourthQViewController.swift */; };
+		84979B9D2B13EF0200971AB1 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B9C2B13EF0200971AB1 /* AdviceViewController.swift */; };
+		84DDE9E42AD8896A00B59721 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDE9E32AD8896A00B59721 /* DetailsTableViewController.swift */; };
+		84DDE9E62AD88AD300B59721 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDE9E52AD88AD300B59721 /* DetailsTableViewCell.swift */; };
+		84F4B8E22B1541EE003A861B /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4B8E12B1541EE003A861B /* DataHolder.swift */; };
+		84FEF7742B130EC700D42DE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEF7732B130EC700D42DE0 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +53,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		842C4BDB2ADF456700EB9613 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		842C4BDE2ADF46B400EB9613 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		842C4BE02ADF46BB00EB9613 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		843B4F832B09DB1800C658EB /* MeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationCell.swift; sourceTree = "<group>"; };
+		843B4F852B09DB3300C658EB /* YogaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCell.swift; sourceTree = "<group>"; };
+		845B54A82AE7373300AD844E /* Practice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Practice.json; sourceTree = "<group>"; };
+		84637CC62AE4E2CC00797103 /* PListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListViewController.swift; sourceTree = "<group>"; };
 		848FEE1C2A64AF540098F198 /* Calmspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calmspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848FEE1F2A64AF540098F198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848FEE212A64AF540098F198 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +73,16 @@
 		848FEE3C2A64AF580098F198 /* CalmspaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalmspaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		848FEE402A64AF580098F198 /* CalmspaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmspaceUITests.swift; sourceTree = "<group>"; };
 		848FEE422A64AF580098F198 /* CalmspaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmspaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84979B942B13ECC600971AB1 /* FirstQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstQViewController.swift; sourceTree = "<group>"; };
+		84979B962B13ED1A00971AB1 /* SecondQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondQViewController.swift; sourceTree = "<group>"; };
+		84979B982B13ED3000971AB1 /* ThirdQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdQViewController.swift; sourceTree = "<group>"; };
+		84979B9A2B13ED7000971AB1 /* FourthQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthQViewController.swift; sourceTree = "<group>"; };
+		84979B9C2B13EF0200971AB1 /* AdviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
+		84DDE9E32AD8896A00B59721 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
+		84DDE9E52AD88AD300B59721 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		84E9E7442B09AD5800C50648 /* PracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
+		84F4B8E12B1541EE003A861B /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
+		84FEF7732B130EC700D42DE0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842C4BE12ADF46BB00EB9613 /* MapKit.framework in Frameworks */,
+				842C4BDF2ADF46B400EB9613 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		842C4BDD2ADF46B400EB9613 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				842C4BE02ADF46BB00EB9613 /* MapKit.framework */,
+				842C4BDE2ADF46B400EB9613 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		848FEE132A64AF540098F198 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +128,7 @@
 				848FEE352A64AF580098F198 /* CalmspaceTests */,
 				848FEE3F2A64AF580098F198 /* CalmspaceUITests */,
 				848FEE1D2A64AF540098F198 /* Products */,
+				842C4BDD2ADF46B400EB9613 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +152,21 @@
 				848FEE282A64AF580098F198 /* Assets.xcassets */,
 				848FEE2A2A64AF580098F198 /* LaunchScreen.storyboard */,
 				848FEE2D2A64AF580098F198 /* Info.plist */,
+				84FEF7732B130EC700D42DE0 /* HomeViewController.swift */,
+				84979B942B13ECC600971AB1 /* FirstQViewController.swift */,
+				84979B962B13ED1A00971AB1 /* SecondQViewController.swift */,
+				84979B982B13ED3000971AB1 /* ThirdQViewController.swift */,
+				84979B9A2B13ED7000971AB1 /* FourthQViewController.swift */,
+				84979B9C2B13EF0200971AB1 /* AdviceViewController.swift */,
+				84637CC62AE4E2CC00797103 /* PListViewController.swift */,
+				843B4F832B09DB1800C658EB /* MeditationCell.swift */,
+				843B4F852B09DB3300C658EB /* YogaCell.swift */,
+				84E9E7442B09AD5800C50648 /* PracticeViewController.swift */,
+				84DDE9E32AD8896A00B59721 /* DetailsTableViewController.swift */,
+				84DDE9E52AD88AD300B59721 /* DetailsTableViewCell.swift */,
+				842C4BDB2ADF456700EB9613 /* DisplayViewController.swift */,
+				845B54A82AE7373300AD844E /* Practice.json */,
+				84F4B8E12B1541EE003A861B /* DataHolder.swift */,
 			);
 			path = Calmspace;
 			sourceTree = "<group>";
@@ -231,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845B54A92AE7373300AD844E /* Practice.json in Resources */,
 				848FEE2C2A64AF580098F198 /* LaunchScreen.storyboard in Resources */,
 				848FEE292A64AF580098F198 /* Assets.xcassets in Resources */,
 				848FEE272A64AF540098F198 /* Main.storyboard in Resources */,
@@ -258,9 +320,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84979B9D2B13EF0200971AB1 /* AdviceViewController.swift in Sources */,
+				8479C6DC2B0C2B2A0022DC50 /* PracticeViewController.swift in Sources */,
 				848FEE242A64AF540098F198 /* ViewController.swift in Sources */,
+				84637CC72AE4E2CC00797103 /* PListViewController.swift in Sources */,
 				848FEE202A64AF540098F198 /* AppDelegate.swift in Sources */,
+				84DDE9E42AD8896A00B59721 /* DetailsTableViewController.swift in Sources */,
+				84979B952B13ECC600971AB1 /* FirstQViewController.swift in Sources */,
+				84979B9B2B13ED7000971AB1 /* FourthQViewController.swift in Sources */,
+				84979B992B13ED3000971AB1 /* ThirdQViewController.swift in Sources */,
+				84DDE9E62AD88AD300B59721 /* DetailsTableViewCell.swift in Sources */,
+				842C4BDC2ADF456700EB9613 /* DisplayViewController.swift in Sources */,
+				84FEF7742B130EC700D42DE0 /* HomeViewController.swift in Sources */,
 				848FEE222A64AF540098F198 /* SceneDelegate.swift in Sources */,
+				843B4F862B09DB3300C658EB /* YogaCell.swift in Sources */,
+				84F4B8E22B1541EE003A861B /* DataHolder.swift in Sources */,
+				84979B972B13ED1A00971AB1 /* SecondQViewController.swift in Sources */,
+				843B4F842B09DB1800C658EB /* MeditationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
