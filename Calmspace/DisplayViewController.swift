@@ -14,7 +14,7 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     
-    @IBOutlet weak var actInt: UIActivityIndicatorView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     @IBAction func refresh(_ sender: Any) {
         
@@ -56,11 +56,11 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-            actInt.startAnimating()
+            spinner.startAnimating()
         }
         
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            actInt.stopAnimating()
+            spinner.stopAnimating()
         }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
