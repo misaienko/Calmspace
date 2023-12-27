@@ -53,6 +53,12 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
         } else {
             print("URL is nil")
         }
+        
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backPressed))
+        
+        backButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        
+                navigationItem.leftBarButtonItem = backButton
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
@@ -66,4 +72,10 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print("Web view failed to load with error: \(error.localizedDescription)")
     }
+    
+    @objc func backPressed() {
+            // Handle the back navigation item press
+            // For example, navigate back to HomeViewController
+            navigationController?.popToRootViewController(animated: true)
+        }
 }

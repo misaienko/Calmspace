@@ -72,6 +72,10 @@ class MainChoiceViewController: UIViewController{
             fatalError("Failed to decode Practice.json: \(error)")
         }
         
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backPressed))
+
+        
+                navigationItem.leftBarButtonItem = backButton
     }
     
     
@@ -103,4 +107,10 @@ class MainChoiceViewController: UIViewController{
             }
         }
     }
+    
+    @objc func backPressed() {
+           // Handle the back navigation item press
+           // For example, navigate back to HomeViewController
+           navigationController?.popToRootViewController(animated: true)
+       }
 }

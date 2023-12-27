@@ -25,8 +25,10 @@ class SecondAskViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
         
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backPressed))
+                navigationItem.leftBarButtonItem = backButton
     }
-    
+
     func updateUI() {
         
         switch questionIndex {
@@ -106,6 +108,12 @@ class SecondAskViewController: UIViewController {
                     destinationVC.selectedOption = selectedOption
                 }
             }
+        }
+    
+    @objc func backPressed() {
+            // Handle the back navigation item press
+            // For example, navigate back to HomeViewController
+            navigationController?.popToRootViewController(animated: true)
         }
     }
 

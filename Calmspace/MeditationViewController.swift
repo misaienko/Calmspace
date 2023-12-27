@@ -22,6 +22,13 @@ class MeditationViewController: UIViewController {
         let verticalInset = (view.bounds.height - meditationTable.contentSize.height) * 0.70
                 meditationTable.contentInset = UIEdgeInsets(top: verticalInset, left: 0, bottom: verticalInset, right: 0)
         
+        let forestGreenColor = UIColor(red: 34/255.0, green: 56/255.0, blue: 34/255.0, alpha: 1.0)
+        
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backPressed))
+        
+        backButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: forestGreenColor], for: .normal)
+        
+                navigationItem.leftBarButtonItem = backButton
     }
 }
 extension MeditationViewController: UITableViewDelegate, UITableViewDataSource {
@@ -44,10 +51,10 @@ extension MeditationViewController: UITableViewDelegate, UITableViewDataSource {
             let selectedMeditation = meditationSections[indexPath.row]
             var content = cell.defaultContentConfiguration()
             
-            if let customFont = UIFont(name: "AvenirNext-DemiBold", size: 18.0) {
+            if let customFont = UIFont(name: "AvenirNext-DemiBold", size: 22.0) {
                 content.textProperties.font = customFont
             } else {
-                content.textProperties.font = UIFont.systemFont(ofSize: 18.0, weight: .bold)
+                content.textProperties.font = UIFont.systemFont(ofSize: 22.0, weight: .bold)
             }
             
             content.textProperties.color = UIColor.white
@@ -87,4 +94,9 @@ extension MeditationViewController: UITableViewDelegate, UITableViewDataSource {
            self.navigationController?.pushViewController(detailsViewController, animated: true)
        }
    }
+    @objc func backPressed() {
+            // Handle the back navigation item press
+            // For example, navigate back to HomeViewController
+            navigationController?.popToRootViewController(animated: true)
+        }
 }

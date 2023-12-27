@@ -250,7 +250,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Let's Do It">
                                     <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                    <color key="baseBackgroundColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" red="0.082352943720000002" green="0.2235293984" blue="0.039215687659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="5je-gN-PIF" kind="show" id="ijA-iM-KxM"/>
@@ -297,7 +297,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image9" translatesAutoresizingMaskIntoConstraints="NO" id="ub2-gK-uTE">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.082352943720000002" green="0.2235293984" blue="0.039215687659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="MbR-2Z-4WC">
                                 <rect key="frame" x="97" y="233" width="199" height="366"/>
@@ -363,7 +364,9 @@
                                 <color key="backgroundColor" red="0.082129452790000002" green="0.22426707470000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.082129452790000002" green="0.22426707470000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" red="0.063617512583732605" green="0.23660105466842651" blue="0.079470328986644745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.082129452790000002" green="0.22426707470000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MeditationCell" id="XLk-Ke-Z4s">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
@@ -410,6 +413,7 @@
                                 <color key="tintColor" red="0.082129452790000002" green="0.22426707470000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" red="0.082129452790000002" green="0.22426707470000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.082129452790000002" green="0.22426707470000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.082352943720000002" green="0.2235293984" blue="0.039215687659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="YogaCell" id="bhb-SW-jX7">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
@@ -581,51 +585,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iKH-S4-nev">
-                                <rect key="frame" x="62" y="108" width="269" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" red="0.077306983580000002" green="0.21109858249999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="9ga-GL-UYM">
-                                <rect key="frame" x="172" y="167" width="49" height="104.33333333333331"/>
-                                <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oyl-Af-GPG">
-                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBq-ja-XwC">
-                                        <rect key="frame" x="4" y="84" width="41.333333333333336" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="9ga-GL-UYM">
+                                <rect key="frame" x="172" y="167" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9CT-A9-V9m" customClass="FSCalendar">
-                                <rect key="frame" x="42" y="329.33333333333326" width="309" height="397.66666666666674"/>
+                                <rect key="frame" x="16" y="256" width="361" height="461"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
+                                        <color key="value" red="0.054995432496070862" green="0.16673228144645691" blue="0.062440909445285797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                        <color key="value" red="0.054995432496070862" green="0.16673228144645691" blue="0.062440909445285797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
+                                        <color key="value" red="0.054995432496070862" green="0.16673228144645691" blue="0.062440909445285797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleTodayColor">
+                                        <color key="value" red="0.054995432496070862" green="0.16673228144645691" blue="0.062440909445285797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titlePlaceholderColor">
+                                        <color key="value" red="0.054995432496070862" green="0.16673228144645691" blue="0.062440909445285797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="subtitleDefaultColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="subtitleSelectionColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="subtitleTodayColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="subtitlePlaceholderColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="subtitleWeekendColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" red="0.054995432496070862" green="0.16673228144645691" blue="0.062440909445285797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" red="0.054995432496070862" green="0.16673228144645691" blue="0.062440909445285797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="ObT-WO-En4" id="Sx5-j4-t7f"/>
                                     <outlet property="delegate" destination="ObT-WO-En4" id="qIo-5m-nch"/>
                                 </connections>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iKH-S4-nev">
+                                <rect key="frame" x="62" y="154" width="269" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.077306983580000002" green="0.21109858249999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.054995432496070862" green="0.16673228144645691" blue="0.062440909445285797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mau-bg-IZd"/>
                         <color key="backgroundColor" red="0.077306983580000002" green="0.21109858249999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.077306983580000002" green="0.21109858249999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="mau-bg-IZd" firstAttribute="bottom" secondItem="9CT-A9-V9m" secondAttribute="bottom" constant="42" id="BJv-q7-Zgf"/>
-                            <constraint firstItem="9ga-GL-UYM" firstAttribute="top" secondItem="iKH-S4-nev" secondAttribute="bottom" constant="25" id="Bys-He-cjZ"/>
-                            <constraint firstItem="9CT-A9-V9m" firstAttribute="leading" secondItem="mau-bg-IZd" secondAttribute="leading" constant="42" id="Gl4-Tm-UY7"/>
-                            <constraint firstItem="iKH-S4-nev" firstAttribute="leading" secondItem="mau-bg-IZd" secondAttribute="leading" constant="62" id="IYl-zT-7uu"/>
-                            <constraint firstItem="9CT-A9-V9m" firstAttribute="top" secondItem="9ga-GL-UYM" secondAttribute="bottom" constant="58" id="cCo-zA-LaO"/>
-                            <constraint firstItem="mau-bg-IZd" firstAttribute="trailing" secondItem="9ga-GL-UYM" secondAttribute="trailing" constant="172" id="ejY-eW-ili"/>
-                            <constraint firstItem="mau-bg-IZd" firstAttribute="trailing" secondItem="iKH-S4-nev" secondAttribute="trailing" constant="62" id="g7I-zR-45B"/>
-                            <constraint firstItem="9ga-GL-UYM" firstAttribute="leading" secondItem="mau-bg-IZd" secondAttribute="leading" constant="172" id="ok9-xn-4lY"/>
-                            <constraint firstItem="iKH-S4-nev" firstAttribute="top" secondItem="mau-bg-IZd" secondAttribute="top" constant="49" id="sOP-Yj-QtS"/>
-                            <constraint firstItem="mau-bg-IZd" firstAttribute="trailing" secondItem="9CT-A9-V9m" secondAttribute="trailing" constant="42" id="yvA-Mg-lh8"/>
+                            <constraint firstItem="iKH-S4-nev" firstAttribute="leading" secondItem="mau-bg-IZd" secondAttribute="leading" constant="62" id="IIp-4T-Ean"/>
+                            <constraint firstItem="iKH-S4-nev" firstAttribute="top" secondItem="mau-bg-IZd" secondAttribute="top" constant="95" id="JdW-8b-XtR"/>
+                            <constraint firstItem="9CT-A9-V9m" firstAttribute="leading" secondItem="mau-bg-IZd" secondAttribute="leading" constant="16" id="Ujg-1u-iXw"/>
+                            <constraint firstItem="9CT-A9-V9m" firstAttribute="top" secondItem="iKH-S4-nev" secondAttribute="bottom" constant="68" id="hll-Oc-62c"/>
+                            <constraint firstItem="mau-bg-IZd" firstAttribute="bottom" secondItem="9CT-A9-V9m" secondAttribute="bottom" constant="52" id="iOb-lr-arZ"/>
+                            <constraint firstItem="mau-bg-IZd" firstAttribute="trailing" secondItem="iKH-S4-nev" secondAttribute="trailing" constant="62" id="kEZ-dm-rKn"/>
+                            <constraint firstItem="mau-bg-IZd" firstAttribute="trailing" secondItem="9CT-A9-V9m" secondAttribute="trailing" constant="16" id="vmd-BN-8y7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Track" image="figure.dance" catalog="system" id="3m4-fz-eIH">
@@ -633,8 +662,6 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="calendarView" destination="9CT-A9-V9m" id="gfE-T5-CeA"/>
-                        <outlet property="monthLabel" destination="IBq-ja-XwC" id="4Fs-Tx-ipI"/>
-                        <outlet property="monthSwitch" destination="oyl-Af-GPG" id="16Y-3q-S3v"/>
                         <outlet property="trackStatement" destination="iKH-S4-nev" id="Swj-X2-W7n"/>
                     </connections>
                 </viewController>
@@ -689,11 +716,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4Dr-LA-nBS"/>
+        <segue reference="mfS-bj-GWy"/>
         <segue reference="FpS-jZ-xjf"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="figure.dance" catalog="system" width="83" height="128"/>
+        <image name="figure.dance" catalog="system" width="32" height="32"/>
         <image name="figure.mind.and.body" catalog="system" width="128" height="102"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="image3" width="1080" height="1920"/>

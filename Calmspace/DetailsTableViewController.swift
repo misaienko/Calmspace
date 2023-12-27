@@ -17,6 +17,17 @@ class DetailsTableViewController: UITableViewController {
     var activitiesArray: [PracticeLinks] = []
     var practiceType: String?
     
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            // Your existing code
+            // Add a custom back button action
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backPressed))
+        
+        backButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        
+            navigationItem.leftBarButtonItem = backButton
+        }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -55,6 +66,11 @@ class DetailsTableViewController: UITableViewController {
                     navigationController?.pushViewController(displayViewController, animated: true)
                 }
             }
+    @objc func backPressed() {
+        // Handle the back navigation item press
+        // For example, navigate back to HomeViewController
+        navigationController?.popToRootViewController(animated: true)
+    }
         }
   
  

@@ -35,6 +35,13 @@ class AdviceViewController: UIViewController {
         
         displayAdvice()
         
+        let forestGreenColor = UIColor(red: 34/255.0, green: 56/255.0, blue: 34/255.0, alpha: 1.0)
+
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backPressed))
+        
+        backButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: forestGreenColor], for: .normal)
+
+                navigationItem.leftBarButtonItem = backButton
     }
     
     func displayAdvice() {
@@ -119,4 +126,10 @@ class AdviceViewController: UIViewController {
                     adviceText.text = "No advice available for the selected option"
         }
     }
+    
+    @objc func backPressed() {
+            // Handle the back navigation item press
+            // For example, navigate back to HomeViewController
+            navigationController?.popToRootViewController(animated: true)
+        }
 }
