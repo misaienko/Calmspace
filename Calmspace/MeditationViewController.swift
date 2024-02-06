@@ -7,9 +7,10 @@
 import UIKit
 
 class MeditationViewController: UIViewController {
+    
     var practiceType: String?
     var meditationSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation"]
-
+    
     @IBOutlet weak var meditationTable: UITableView!
 
     override func viewDidLoad() {

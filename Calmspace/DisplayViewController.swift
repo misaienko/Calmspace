@@ -14,6 +14,8 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!    
+    @IBOutlet weak var stopButton: UIBarButtonItem!
     
     @IBAction func refresh(_ sender: Any) {
         webView.reload()
@@ -36,9 +38,13 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
     }
     
     override func viewDidLoad() {
+        print("DisplayViewController viewDidLoad() called")
         super.viewDidLoad()
         setupWebView()
         loadInitialURL()
+        webView.accessibilityIdentifier = "webViewIdentifier"
+        refreshButton.accessibilityIdentifier = "refreshButtonIdentifier"
+        stopButton.accessibilityIdentifier = "stopButtonIdentifier"
     }
     
     private func setupWebView() {

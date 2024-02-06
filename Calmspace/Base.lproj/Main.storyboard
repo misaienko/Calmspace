@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37L-5W-kOZ">
-                                <rect key="frame" x="97" y="281.33333333333331" width="181" height="72.666666666666686"/>
+                                <rect key="frame" x="97" y="280.33333333333331" width="181" height="68.666666666666686"/>
                                 <color key="tintColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Suggest Activity">
@@ -31,9 +31,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to your Calm Space!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoL-Au-aTW">
-                                <rect key="frame" x="42" y="204" width="291" height="27.333333333333343"/>
+                                <rect key="frame" x="42" y="184" width="291" height="27.333333333333343"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                <color key="textColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.048600740730762482" green="0.15987086296081543" blue="0.064858786761760712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -46,10 +46,10 @@
                             <constraint firstItem="ft3-cr-1K1" firstAttribute="top" secondItem="Bla-xH-IK7" secondAttribute="top" id="Kth-04-CdA"/>
                             <constraint firstItem="ft3-cr-1K1" firstAttribute="leading" secondItem="okt-ZP-3g9" secondAttribute="leading" id="R0s-eo-oUM"/>
                             <constraint firstItem="ft3-cr-1K1" firstAttribute="trailing" secondItem="okt-ZP-3g9" secondAttribute="trailing" id="bDs-I2-ifv"/>
-                            <constraint firstItem="GoL-Au-aTW" firstAttribute="top" secondItem="okt-ZP-3g9" secondAttribute="top" constant="110" id="fsu-FX-SCT"/>
+                            <constraint firstItem="GoL-Au-aTW" firstAttribute="top" secondItem="okt-ZP-3g9" secondAttribute="top" constant="90" id="fsu-FX-SCT"/>
                             <constraint firstItem="GoL-Au-aTW" firstAttribute="leading" secondItem="okt-ZP-3g9" secondAttribute="leading" constant="42" id="myD-ly-aN1"/>
-                            <constraint firstItem="okt-ZP-3g9" firstAttribute="bottom" secondItem="37L-5W-kOZ" secondAttribute="bottom" constant="375" id="pgY-Eg-sap"/>
-                            <constraint firstItem="37L-5W-kOZ" firstAttribute="top" secondItem="GoL-Au-aTW" secondAttribute="bottom" constant="50" id="wCo-e6-6A9"/>
+                            <constraint firstItem="okt-ZP-3g9" firstAttribute="bottom" secondItem="37L-5W-kOZ" secondAttribute="bottom" constant="380" id="pgY-Eg-sap"/>
+                            <constraint firstItem="37L-5W-kOZ" firstAttribute="top" secondItem="GoL-Au-aTW" secondAttribute="bottom" constant="68.999999999999972" id="sX5-Mn-cud"/>
                             <constraint firstItem="okt-ZP-3g9" firstAttribute="trailing" secondItem="GoL-Au-aTW" secondAttribute="trailing" constant="42" id="y2N-Ph-ce9"/>
                         </constraints>
                     </view>
@@ -66,7 +66,7 @@
         <!--First Ask View Controller-->
         <scene sceneID="YG3-ie-gQG">
             <objects>
-                <viewController id="ubZ-YP-Vxu" customClass="FirstAskViewController" customModule="Calmspace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstAskViewController" id="ubZ-YP-Vxu" customClass="FirstAskViewController" customModule="Calmspace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KGl-eP-GR0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,7 +178,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnd-Rf-BOA">
-                                <rect key="frame" x="97" y="639" width="181" height="72"/>
+                                <rect key="frame" x="97" y="659" width="181" height="32"/>
                                 <color key="tintColor" red="0.054995432496070862" green="0.16673228144645691" blue="0.062440909445285797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Let's Do It">
@@ -190,7 +190,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bW2-HZ-yV7">
-                                <rect key="frame" x="24" y="179" width="327" height="50"/>
+                                <rect key="frame" x="24" y="169" width="327" height="50"/>
                                 <color key="backgroundColor" red="0.077306983580000002" green="0.21109858249999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.077306983580000002" green="0.21109858249999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -204,11 +204,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bnd-Rf-BOA" firstAttribute="top" secondItem="bW2-HZ-yV7" secondAttribute="bottom" constant="410" id="44k-Jp-B9j"/>
+                            <constraint firstItem="bnd-Rf-BOA" firstAttribute="top" secondItem="bW2-HZ-yV7" secondAttribute="bottom" constant="440" id="44k-Jp-B9j"/>
                             <constraint firstItem="bW2-HZ-yV7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="5LX-zN-S7M"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bnd-Rf-BOA" secondAttribute="trailing" constant="97" id="HIJ-FE-spp"/>
-                            <constraint firstItem="bW2-HZ-yV7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="OH5-MT-qd1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bnd-Rf-BOA" secondAttribute="bottom" constant="18" id="TYo-wJ-4C9"/>
+                            <constraint firstItem="bW2-HZ-yV7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="OH5-MT-qd1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bnd-Rf-BOA" secondAttribute="bottom" constant="38" id="TYo-wJ-4C9"/>
                             <constraint firstItem="bnd-Rf-BOA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="siV-hN-smH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bW2-HZ-yV7" secondAttribute="trailing" constant="24" id="ubK-IW-s5K"/>
                         </constraints>
@@ -495,7 +495,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Umf-Mx-07y"/>
                     <connections>
+                        <outlet property="refreshButton" destination="gak-Lr-1xU" id="ydv-du-nWT"/>
                         <outlet property="spinner" destination="VwA-7P-nyB" id="6ZV-Zs-Ha0"/>
+                        <outlet property="stopButton" destination="px2-QJ-89h" id="XJZ-Zq-1w3"/>
                         <outlet property="webView" destination="Xls-KW-C2f" id="IrZ-8I-dV6"/>
                     </connections>
                 </viewController>
@@ -646,8 +648,8 @@
         <segue reference="mfS-bj-GWy"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="figure.dance" catalog="system" width="83" height="128"/>
-        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="figure.dance" catalog="system" width="32" height="32"/>
+        <image name="house.fill" catalog="system" width="32" height="32"/>
         <image name="image3" width="1080" height="1920"/>
         <image name="image5" width="1080" height="1920"/>
         <image name="image7" width="1080" height="1920"/>

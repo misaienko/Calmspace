@@ -8,7 +8,6 @@
 import UIKit
 
 var practiceSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation", "Yoga: Beginner & All Levels", "Yoga: Medium & Advance Levels"]
-
 var practiceData: Practice!
 
 struct Practice: Codable {
@@ -51,8 +50,12 @@ struct YogaSession: Codable {
 
 class MainChoiceViewController: UIViewController {
     
+    @IBOutlet weak var meditationButton: UIButton!
+    @IBOutlet weak var yogaButton: UIButton!
     var meditationSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation"]
     var yogaSections = ["Yoga: Beginner & All Levels", "Yoga: Medium & Advance Levels"]
+    var meditationTable: UITableView?
+    var yogaTable: UITableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,12 +74,6 @@ class MainChoiceViewController: UIViewController {
             fatalError("Failed to decode Practice.json: \(error)")
         }
     }
-    
-    @IBOutlet weak var meditationButton: UIButton!
-    @IBOutlet weak var yogaButton: UIButton!
-    
-    var meditationTable: UITableView?
-    var yogaTable: UITableView?
     
     @IBAction func meditationPressed(_ sender: Any) {
         print("Meditation button pressed")

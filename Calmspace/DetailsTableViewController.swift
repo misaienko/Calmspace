@@ -33,9 +33,8 @@ class DetailsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell", for: indexPath)
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell", for: indexPath)
         let selectedMeditation = activitiesArray[indexPath.row]
         var content = cell.defaultContentConfiguration()
         
@@ -51,7 +50,8 @@ class DetailsTableViewController: UITableViewController {
         content.text = selectedMeditation.title
         content.textProperties.alignment = .center
         cell.contentConfiguration = content
-        
+        cell.accessibilityIdentifier = "optionCell_\(indexPath.row)"
+
         return cell
     }
     
