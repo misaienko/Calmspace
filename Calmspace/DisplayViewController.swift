@@ -14,27 +14,10 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var refreshButton: UIBarButtonItem!    
-    @IBOutlet weak var stopButton: UIBarButtonItem!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     @IBAction func refresh(_ sender: Any) {
         webView.reload()
-    }
-    
-    @IBAction func stop(_ sender: Any) {
-        webView.stopLoading()
-    }
-    
-    @IBAction func rewind(_ sender: Any) {
-        if webView.canGoBack {
-            webView.goBack()
-        }
-    }
-    
-    @IBAction func forward(_ sender: Any) {
-        if webView.canGoForward {
-            webView.goForward()
-        }
     }
     
     override func viewDidLoad() {
@@ -44,7 +27,6 @@ class DisplayViewController: UIViewController, WKNavigationDelegate {
         loadInitialURL()
         webView.accessibilityIdentifier = "webViewIdentifier"
         refreshButton.accessibilityIdentifier = "refreshButtonIdentifier"
-        stopButton.accessibilityIdentifier = "stopButtonIdentifier"
     }
     
     private func setupWebView() {

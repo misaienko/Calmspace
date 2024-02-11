@@ -8,8 +8,9 @@
 import XCTest
 
 final class CalmspaceUITests: XCTestCase {
-
+    
     var app: XCUIApplication!
+    var webView: XCUIElement!
     
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -17,48 +18,46 @@ final class CalmspaceUITests: XCTestCase {
         app.launch()
     }
     
-    func testSelectCellInDetailsView() {
-            let detailsTableView = app.tables["detailsTable"]
-            let cellToSelect = detailsTableView.cells.element(matching: .cell, identifier: "optionCell_0")
-            XCTAssertTrue(cellToSelect.waitForExistence(timeout: 10), "Cell not found")
-            cellToSelect.tap()
-            XCTAssertTrue(app.navigationBars["DisplayViewController"].waitForExistence(timeout: 10), "Navigation to DisplayViewController failed")
+    func testFullNavigationFlow() throws {
+        XCTAssertTrue(app.buttons["suggestActivity"].waitForExistence(timeout: 10))
+        app.buttons["suggestActivity"].tap()
+        
+        var tapCount = 0
+        
+        while tapCount < 4 {
+            XCTAssertTrue(app.buttons["answerButton1"].waitForExistence(timeout: 10))
+            app.buttons["answerButton1"].tap()
+            tapCount += 1
         }
-    
-    func testLoadURL() {
-        app.launchArguments.append("--uitesting")
-        app.launch()
-        let webView = app.webViews.element
-        XCTAssertTrue(webView.waitForExistence(timeout: 10), "Web view not found")
-        if webView.exists {
-            print("Web view found")
-        } else {
-            print("Web view not found")
+        
+        XCTAssertTrue(app.buttons["commandButton"].waitForExistence(timeout: 10))
+        app.buttons["commandButton"].tap()
+        
+        XCTAssertTrue(app.buttons["meditationButton"].waitForExistence(timeout: 10) || app.buttons["yogaButton"].waitForExistence(timeout: 10))
+        
+        if app.buttons["meditationButton"].exists {
+            app.buttons["meditationButton"].tap()
+        } else if app.buttons["yogaButton"].exists {
+            app.buttons["yogaButton"].tap()
         }
-    }
-
-    func testRefreshButton() {
-        app.launchArguments.append("--uitesting")
-        app.launch()
-        let refreshButton = app.buttons["refreshButton"]
-        XCTAssertTrue(refreshButton.waitForExistence(timeout: 10), "Refresh button not found")
-        if refreshButton.exists {
-            print("Refresh button found")
-        } else {
-            print("Refresh button not found")
+        
+        if app.cells["meditation_0"].waitForExistence(timeout: 10) {
+            app.cells["meditation_0"].tap()
+        } else if app.cells["yoga_0"].waitForExistence(timeout: 10) {
+            app.cells["yoga_0"].tap()
         }
-    }
-
-    func testStopButton() {
-        app.launchArguments.append("--uitesting")
-        app.launch()
-        let stopButton = app.buttons["stopButton"]
-        XCTAssertTrue(stopButton.waitForExistence(timeout: 10), "Stop button not found")
-        if stopButton.exists {
-            print("Stop button found")
+        
+        XCTAssertTrue(app.cells["details_0"].waitForExistence(timeout: 10))
+        app.cells["details_0"].tap()
+        
+        webView = app.webViews["webViewIdentifier"].firstMatch
+        if webView.waitForExistence(timeout: 10) {
+            webView.swipeDown()
+            sleep(2)
         } else {
-            print("Stop button not found")
+            XCTFail("Web view not found")
         }
     }
 }
+
 

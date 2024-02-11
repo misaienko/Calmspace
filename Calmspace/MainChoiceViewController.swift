@@ -52,6 +52,7 @@ class MainChoiceViewController: UIViewController {
     
     @IBOutlet weak var meditationButton: UIButton!
     @IBOutlet weak var yogaButton: UIButton!
+    
     var meditationSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation"]
     var yogaSections = ["Yoga: Beginner & All Levels", "Yoga: Medium & Advance Levels"]
     var meditationTable: UITableView?
@@ -73,6 +74,9 @@ class MainChoiceViewController: UIViewController {
         } catch {
             fatalError("Failed to decode Practice.json: \(error)")
         }
+        
+        meditationButton.accessibilityIdentifier = "meditationButton"
+        yogaButton.accessibilityIdentifier = "yogaButton"
     }
     
     @IBAction func meditationPressed(_ sender: Any) {

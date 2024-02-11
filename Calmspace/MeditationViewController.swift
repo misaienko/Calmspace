@@ -12,7 +12,7 @@ class MeditationViewController: UIViewController {
     var meditationSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation"]
     
     @IBOutlet weak var meditationTable: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +42,7 @@ extension MeditationViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = configureMeditationCell(tableView, indexPath)
+        cell.accessibilityIdentifier = "meditation_\(indexPath.row)"
         return cell
     }
 
@@ -54,9 +55,7 @@ extension MeditationViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedMeditation = meditationSections[indexPath.row]
         var content = cell.defaultContentConfiguration()
         cell.selectionStyle = .none
-        
         configureFont(in: &content)
-        
         configureTextProperties(in: &content, with: selectedMeditation)
         cell.contentConfiguration = content
 

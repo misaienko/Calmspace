@@ -43,6 +43,7 @@ extension YogaViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = configureYogaCell(tableView, indexPath)
+        cell.accessibilityIdentifier = "yoga_\(indexPath.row)"
         return cell
     }
     
@@ -55,7 +56,6 @@ extension YogaViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedYoga = yogaSections[indexPath.row]
         var content = cell.defaultContentConfiguration()
         cell.selectionStyle = .none
-        
         configureFont(in: &content)
         configureTextProperties(in: &content, with: selectedYoga)
         cell.contentConfiguration = content

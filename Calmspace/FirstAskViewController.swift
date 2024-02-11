@@ -24,6 +24,9 @@ class FirstAskViewController: UIViewController {
         setButtonFont(for: answerButton1)
         setButtonFont(for: answerButton2)
         setButtonFont(for: answerButton3)
+        answerButton1.accessibilityIdentifier = "answerButton1"
+        answerButton2.accessibilityIdentifier = "answerButton2"
+        answerButton3.accessibilityIdentifier = "answerButton3"
     }
     
     func setButtonFont(for button: UIButton) {

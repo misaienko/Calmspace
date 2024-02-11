@@ -19,10 +19,11 @@ class HomeViewController: UIViewController {
         suggestActivity.layer.shadowOpacity = 0.5
         suggestActivity.layer.shadowRadius = 15
         suggestActivity.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        suggestActivity.accessibilityIdentifier = "suggestActivity"
     }
     
     @IBAction func suggestActivityPressed(_ sender: Any) {
-        performSegue(withIdentifier: "Q1", sender: self)
+        performSegue(withIdentifier: "Questions", sender: self)
     }
     
     @objc func buttonPressed() {

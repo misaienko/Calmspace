@@ -11,6 +11,7 @@ import FSCalendar
 extension UIColor {
     static let forestGreen = UIColor(red: 45/255.0, green: 67/255.0, blue: 34/255.0, alpha: 1.0)
 }
+
 class TrackViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     
     @IBOutlet weak var calendarView: FSCalendar!
@@ -23,7 +24,7 @@ class TrackViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         calendarView.delegate = self
         calendarView.dataSource = self
         calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
@@ -32,9 +33,9 @@ class TrackViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         calendarView.layer.cornerRadius = 15
         calendarView.layer.masksToBounds = true
         calendarView.appearance.headerTitleOffset = CGPoint(x: 3, y: 15)
-
+        
         setupNavigationButtons()
-
+        
         scheduleDailyReminder()
         
         reloadCalendar()
@@ -70,7 +71,7 @@ class TrackViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         calendarView.setCurrentPage(prevMonth!, animated: true)
         reloadCalendar()
     }
-
+    
     @objc func nextMonthTapped() {
         let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: calendarView.currentPage)
         calendarView.setCurrentPage(nextMonth!, animated: true)
@@ -78,9 +79,7 @@ class TrackViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     }
     
     func scheduleDailyReminder() {
-        // First reminder at 8 AM
         scheduleReminder(hour: 8, minute: 0, identifier: "morningReminder")
-        // Second reminder at 7 PM
         scheduleReminder(hour: 19, minute: 0, identifier: "eveningReminder")
     }
     
@@ -123,7 +122,7 @@ class TrackViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         }
         return nil
     }
-
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         if selectedDates.contains(where: { Calendar.current.isDate($0, inSameDayAs: date) }) {
             if let index = selectedDates.firstIndex(where: { Calendar.current.isDate($0, inSameDayAs: date) }) {
@@ -168,7 +167,7 @@ class TrackViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         updateTrackStatement(option: option)
         calendarView.reloadData()
     }
-
+    
     func updateTrackStatement(option: Int) {
         switch option {
         case 1:
@@ -181,7 +180,7 @@ class TrackViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
             break
         }
     }
-
+    
     func reloadCalendar() {
         print("Reload calendar data")
     }

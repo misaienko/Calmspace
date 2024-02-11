@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37L-5W-kOZ">
-                                <rect key="frame" x="97" y="280.33333333333331" width="181" height="68.666666666666686"/>
+                                <rect key="frame" x="97" y="280.66666666666669" width="181" height="88.333333333333314"/>
                                 <color key="tintColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Suggest Activity">
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to your Calm Space!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoL-Au-aTW">
-                                <rect key="frame" x="42" y="184" width="291" height="27.333333333333343"/>
+                                <rect key="frame" x="42" y="184" width="291" height="27.666666666666657"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.048600740730762482" green="0.15987086296081543" blue="0.064858786761760712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -48,15 +48,15 @@
                             <constraint firstItem="ft3-cr-1K1" firstAttribute="trailing" secondItem="okt-ZP-3g9" secondAttribute="trailing" id="bDs-I2-ifv"/>
                             <constraint firstItem="GoL-Au-aTW" firstAttribute="top" secondItem="okt-ZP-3g9" secondAttribute="top" constant="90" id="fsu-FX-SCT"/>
                             <constraint firstItem="GoL-Au-aTW" firstAttribute="leading" secondItem="okt-ZP-3g9" secondAttribute="leading" constant="42" id="myD-ly-aN1"/>
-                            <constraint firstItem="okt-ZP-3g9" firstAttribute="bottom" secondItem="37L-5W-kOZ" secondAttribute="bottom" constant="380" id="pgY-Eg-sap"/>
                             <constraint firstItem="37L-5W-kOZ" firstAttribute="top" secondItem="GoL-Au-aTW" secondAttribute="bottom" constant="68.999999999999972" id="sX5-Mn-cud"/>
+                            <constraint firstItem="okt-ZP-3g9" firstAttribute="bottom" secondItem="37L-5W-kOZ" secondAttribute="bottom" constant="360" id="wYl-Xe-f50"/>
                             <constraint firstItem="okt-ZP-3g9" firstAttribute="trailing" secondItem="GoL-Au-aTW" secondAttribute="trailing" constant="42" id="y2N-Ph-ce9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yIe-T1-qI6"/>
                     <connections>
                         <outlet property="suggestActivity" destination="37L-5W-kOZ" id="CVj-FW-qGL"/>
-                        <segue destination="ubZ-YP-Vxu" kind="show" identifier="Q1" id="m4O-Mm-KER"/>
+                        <segue destination="ubZ-YP-Vxu" kind="show" identifier="Questions" id="m4O-Mm-KER"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFV-A4-XzZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -446,22 +446,6 @@
                                             <action selector="refresh:" destination="iCl-ZE-Vdh" id="OFn-p8-sDT"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="stop" id="px2-QJ-89h">
-                                        <connections>
-                                            <action selector="stop:" destination="iCl-ZE-Vdh" id="sxg-5h-d11"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="H3e-GB-HR5"/>
-                                    <barButtonItem systemItem="rewind" id="gVb-kb-Dz6">
-                                        <connections>
-                                            <action selector="rewind:" destination="iCl-ZE-Vdh" id="SoI-b7-wrW"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="fastForward" id="TF6-NF-eyI">
-                                        <connections>
-                                            <action selector="forward:" destination="iCl-ZE-Vdh" id="4JI-Cw-fog"/>
-                                        </connections>
-                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.1215686351" green="0.2470588088" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </toolbar>
@@ -497,7 +481,6 @@
                     <connections>
                         <outlet property="refreshButton" destination="gak-Lr-1xU" id="ydv-du-nWT"/>
                         <outlet property="spinner" destination="VwA-7P-nyB" id="6ZV-Zs-Ha0"/>
-                        <outlet property="stopButton" destination="px2-QJ-89h" id="XJZ-Zq-1w3"/>
                         <outlet property="webView" destination="Xls-KW-C2f" id="IrZ-8I-dV6"/>
                     </connections>
                 </viewController>
@@ -648,8 +631,8 @@
         <segue reference="mfS-bj-GWy"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="figure.dance" catalog="system" width="32" height="32"/>
-        <image name="house.fill" catalog="system" width="32" height="32"/>
+        <image name="figure.dance" catalog="system" width="83" height="128"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="image3" width="1080" height="1920"/>
         <image name="image5" width="1080" height="1920"/>
         <image name="image7" width="1080" height="1920"/>

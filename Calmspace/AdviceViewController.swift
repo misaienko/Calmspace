@@ -38,6 +38,7 @@ class AdviceViewController: UIViewController {
         commandButton.layer.shadowRadius = 15
         
         commandButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        commandButton.accessibilityIdentifier = "commandButton"
     }
     
     func displayAdvice() {

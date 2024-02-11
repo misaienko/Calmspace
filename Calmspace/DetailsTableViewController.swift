@@ -50,7 +50,7 @@ class DetailsTableViewController: UITableViewController {
         content.text = selectedMeditation.title
         content.textProperties.alignment = .center
         cell.contentConfiguration = content
-        cell.accessibilityIdentifier = "optionCell_\(indexPath.row)"
+        cell.accessibilityIdentifier = "details_\(indexPath.row)"
 
         return cell
     }
