@@ -8,6 +8,7 @@
 import UIKit
 
 struct SelectedOption: Equatable {
+    
     enum FeelingTodayLevel {
         case good, okay, bad
     }
@@ -36,7 +37,6 @@ class AdviceViewController: UIViewController {
         commandButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         commandButton.layer.shadowOpacity = 0.5
         commandButton.layer.shadowRadius = 15
-        
         commandButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         commandButton.accessibilityIdentifier = "commandButton"
     }
@@ -47,24 +47,91 @@ class AdviceViewController: UIViewController {
             return
         }
         
-        switch selectedOption {
+        let (modifiers, activities) = Advice.makeAdvice(selectedOption)
+        
+        var adviceMessage = ""
+        for activity in activities {
+            switch activity {
+            case .none:
+                adviceMessage += "No advice available"
+            case .yoga:
+                adviceMessage += "Yoga Practice"
+            case .meditation:
+                adviceMessage += "Meditation"
+            default:
+                fatalError("Unhandled activity: \(activity)")
+            }
+        }
+        
+        switch (modifiers, activities) {
+        case ([.short], [.meditation]):
+            adviceMessage = "Let's have a short Meditation!"
+        case (nil, [.yoga]):
+            adviceMessage = "Let's have a Yoga Practice!"
+        case ([.outside], [.meditation]):
+            adviceMessage = "Let's have a Meditation outside!"
+        case ([.short, .outside], [.yoga]):
+            adviceMessage = "Let's have a quick Yoga outside!"
+        case ([.outside], [.meditation, .yoga]):
+            adviceMessage = "Let's have a Meditation & Yoga outside!"
+        case ([.short], [.yoga]):
+            adviceMessage = "Let's have a quick Yoga Practice!"
+        case ([.short], [.yoga, .meditation]):
+            adviceMessage = "Let's have a quick Yoga & Meditation!"
+        case (nil, [.meditation]):
+            adviceMessage = "Let's have a Meditation!"
+        case (nil, [.none]):
+            adviceMessage = "No advice available for the selected option"
+        default:
+            break
+        }
+        
+        adviceText.text = adviceMessage
+    }
+    
+    
+    @objc func buttonPressed() {
+        commandButton.layer.shadowOpacity = 0.8
+    }
+}
+
+struct Advice {
+    struct Modifier: OptionSet {
+        let rawValue: Int
+        
+        static let short: Self = .init(rawValue: 1 << 0)
+        static let outside: Self = .init(rawValue: 1 << 1)
+    }
+    
+    struct Activity: OptionSet {
+        let rawValue: Int
+        
+        static let none: Self = .init(rawValue: 1 << 0)
+        static let yoga: Self = .init(rawValue: 1 << 1)
+        static let meditation: Self = .init(rawValue: 1 << 2)
+    }
+    
+    static func makeAdvice(_ selection: SelectedOption) -> ([Modifier]?, [Activity]) {
+        
+        switch selection {
+            
         case .init(feelingTodayLevel: .good, botheringReason: nil, hasExercised: true, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .okay, botheringReason: nil, hasExercised: true, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .good, botheringReason: .mentally, hasExercised: true, hasSpentTimeOutside: true):
-            adviceText.text = "Let's have a short Meditation!"
+            return ([.short], [.meditation])
             
         case .init(feelingTodayLevel: .good, botheringReason: .physically, hasExercised: false, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .good, botheringReason: .physically, hasExercised: true, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .okay, botheringReason: .physically, hasExercised: false, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .okay, botheringReason: .physically, hasExercised: true, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .bad, botheringReason: .physically, hasExercised: false, hasSpentTimeOutside: true):
-            adviceText.text = "Let's have a Yoga Practice!"
+            return (nil, [.yoga])
             
         case .init(feelingTodayLevel: .okay, botheringReason: .mentally, hasExercised: true, hasSpentTimeOutside: false),
                 .init(feelingTodayLevel: .good, botheringReason: .mentally, hasExercised: true, hasSpentTimeOutside: false),
                 .init(feelingTodayLevel: .bad, botheringReason: .mentally, hasExercised: true, hasSpentTimeOutside: false),
                 .init(feelingTodayLevel: .okay, botheringReason: .mentally, hasExercised: true, hasSpentTimeOutside: true):
-            adviceText.text = "Let's have a Meditation outside!"
+            return ([.outside], [.meditation])
             
         case .init(feelingTodayLevel: .good, botheringReason: .physically, hasExercised: true, hasSpentTimeOutside: false),
                 .init(feelingTodayLevel: .good, botheringReason: .physically, hasExercised: false, hasSpentTimeOutside: false),
@@ -72,7 +139,7 @@ class AdviceViewController: UIViewController {
                 .init(feelingTodayLevel: .okay, botheringReason: .physically, hasExercised: false, hasSpentTimeOutside: false),
                 .init(feelingTodayLevel: .bad, botheringReason: .physically, hasExercised: true, hasSpentTimeOutside: false),
                 .init(feelingTodayLevel: .bad, botheringReason: .physically, hasExercised: false, hasSpentTimeOutside: false):
-            adviceText.text = "Let's have a quick Yoga outside!"
+            return ([.short, .outside], [.yoga])
             
         case .init(feelingTodayLevel: .bad, botheringReason: nil, hasExercised: false, hasSpentTimeOutside: false),
                 .init(feelingTodayLevel: .bad, botheringReason: .mentally, hasExercised: false, hasSpentTimeOutside: false),
@@ -80,29 +147,25 @@ class AdviceViewController: UIViewController {
                 .init(feelingTodayLevel: .okay, botheringReason: .mentally, hasExercised: false, hasSpentTimeOutside: false),
                 .init(feelingTodayLevel: .good, botheringReason: nil, hasExercised: false, hasSpentTimeOutside: false),
                 .init(feelingTodayLevel: .good, botheringReason: .mentally, hasExercised: false, hasSpentTimeOutside: false):
-            adviceText.text = "Let's have a Meditation & Yoga outside!"
+            return ([.outside], [.meditation, .yoga])
             
         case .init(feelingTodayLevel: .bad, botheringReason: .physically, hasExercised: true, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .okay, botheringReason: nil, hasExercised: false, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .good, botheringReason: nil, hasExercised: false, hasSpentTimeOutside: true):
-            adviceText.text = "Let's have a quick Yoga Practice!"
+            return ([.short], [.yoga])
             
         case .init(feelingTodayLevel: .bad, botheringReason: nil, hasExercised: false, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .bad, botheringReason: .mentally, hasExercised: false, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .good, botheringReason: .mentally, hasExercised: false, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .okay, botheringReason: .mentally, hasExercised: false, hasSpentTimeOutside: true):
-            adviceText.text = "Let's have a quick Yoga & Meditation!"
+            return ([.short], [.yoga, .meditation])
             
         case .init(feelingTodayLevel: .bad, botheringReason: nil, hasExercised: true, hasSpentTimeOutside: true),
                 .init(feelingTodayLevel: .bad, botheringReason: .mentally, hasExercised: true, hasSpentTimeOutside: true):
-            adviceText.text = "Let's have a Meditation!"
+            return (nil, [.meditation])
             
         default:
-            adviceText.text = "No advice available for the selected option"
+            return (nil, [.none])
         }
-    }
-    
-    @objc func buttonPressed() {
-        commandButton.layer.shadowOpacity = 0.8
     }
 }
