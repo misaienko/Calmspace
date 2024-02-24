@@ -8,34 +8,71 @@
 import XCTest
 
 final class CalmspaceUITests: XCTestCase {
-
+    
+    var app: XCUIApplication!
+    var webView: XCUIElement!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+        app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
+    
+    private func navigateToSuggestionView() {
+        XCTAssertTrue(app.buttons["suggestActivity"].waitForExistence(timeout: 10))
+        app.buttons["suggestActivity"].tap()
+    }
+ 
+    private func selectAnswers() {
+        for _ in 0..<4 {
+            XCTAssertTrue(app.buttons["answerButton1"].waitForExistence(timeout: 10))
+            app.buttons["answerButton1"].tap()
         }
+    }
+    
+    private func navigateToActivitySelectionView() {
+        XCTAssertTrue(app.buttons["commandButton"].waitForExistence(timeout: 10))
+        app.buttons["commandButton"].tap()
+    }
+    
+    private func selectActivity() {
+        if app.buttons["meditationButton"].exists {
+            app.buttons["meditationButton"].tap()
+        } else if app.buttons["yogaButton"].exists {
+            app.buttons["yogaButton"].tap()
+        }
+    }
+    
+    private func selectActivityOption() {
+        if app.cells["meditation_0"].waitForExistence(timeout: 10) {
+            app.cells["meditation_0"].tap()
+        } else if app.cells["yoga_0"].waitForExistence(timeout: 10) {
+            app.cells["yoga_0"].tap()
+        }
+    }
+    
+    private func navigateToDetailsView() {
+        XCTAssertTrue(app.cells["details_0"].waitForExistence(timeout: 10))
+        app.cells["details_0"].tap()
+    }
+    
+    private func openWebView() {
+        webView = app.webViews["webViewIdentifier"].firstMatch
+        if webView.waitForExistence(timeout: 10) {
+            webView.swipeDown()
+            sleep(2)
+        } else {
+            XCTFail("Web view not found")
+        }
+    }
+    
+    func testFullNavigationFlow() throws {
+        navigateToSuggestionView()
+        selectAnswers()
+        navigateToActivitySelectionView()
+        selectActivity()
+        selectActivityOption()
+        navigateToDetailsView()
+        openWebView()
     }
 }

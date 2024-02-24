@@ -3,34 +3,64 @@
 //  CalmspaceTests
 //
 //  Created by Admin on 16/07/2023.
-//
 
 import XCTest
 @testable import Calmspace
 
 final class CalmspaceTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    var viewController: AdviceViewController!
+    
+    override func setUp() {
+        super.setUp()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        viewController = storyboard.instantiateViewController(withIdentifier: "AdviceViewController") as? AdviceViewController
+        _ = viewController.view
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        viewController = nil
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testAdviceSelection() {
+        
+        viewController.selectedOption = nil
+        
+        viewController.displayAdvice()
+        
+        XCTAssertEqual(viewController.adviceText.text, "Invalid selection")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testCorrectAdvice() {
+        let testCases: [(SelectedOption?, String)] = [
+            (SelectedOption(feelingTodayLevel: .bad, botheringReason: .physically, hasExercised: false, hasSpentTimeOutside: true), "Let's have a Yoga Practice!"),
+            (SelectedOption(feelingTodayLevel: .okay, botheringReason: .mentally, hasExercised: true, hasSpentTimeOutside: true), "Let's have a Meditation outside!"),
+            (SelectedOption(feelingTodayLevel: .bad, botheringReason: .physically, hasExercised: false, hasSpentTimeOutside: false), "Let's have a quick Yoga outside!"),
+            (SelectedOption(feelingTodayLevel: .good, botheringReason: .mentally, hasExercised: false, hasSpentTimeOutside: false), "Let's have a Meditation & Yoga outside!"),
+            (SelectedOption(feelingTodayLevel: .good, botheringReason: nil, hasExercised: false, hasSpentTimeOutside: true), "Let's have a quick Yoga Practice!"),
+            (SelectedOption(feelingTodayLevel: .okay, botheringReason: .mentally, hasExercised: false, hasSpentTimeOutside: true), "Let's have a quick Yoga & Meditation!"),
+            (SelectedOption(feelingTodayLevel: .bad, botheringReason: .mentally, hasExercised: true, hasSpentTimeOutside: true), "Let's have a Meditation!"),
+            (SelectedOption(feelingTodayLevel: .good, botheringReason: .mentally, hasExercised: true, hasSpentTimeOutside: true),"Let's have a short Meditation!"),
+            (nil, "No advice available for the selected option")
+        ]
+        
+        for (selectedOption, expectedAdvice) in testCases {
+            
+            guard let selectedOption = selectedOption else {
+                print("Error: Selected option is nil")
+                continue
+            }
+            print("Selected Option:", selectedOption)
+            viewController.selectedOption = selectedOption
+            viewController.displayAdvice()
+            guard let actualAdvice = viewController.adviceText.text else {
+                print("Error: Actual advice is nil")
+                continue
+            }
+            print("Expected Advice:", expectedAdvice)
+            print("Actual Advice:", actualAdvice)
+            XCTAssertEqual(actualAdvice, expectedAdvice)
         }
     }
-
 }

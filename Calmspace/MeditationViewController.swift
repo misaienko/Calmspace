@@ -8,95 +8,101 @@ import UIKit
 
 class MeditationViewController: UIViewController {
     
-    var practiceType: String?    
+    var practiceType: String?
     var meditationSections = ["Morning Meditation", "Daily Meditation", "Before Sleep Meditation"]
     
     @IBOutlet weak var meditationTable: UITableView!
     
     override func viewDidLoad() {
-    super.viewDidLoad()
+        super.viewDidLoad()
         
+        setupMeditationTable()
+        
+        let topPadding: CGFloat = 100.0
+
+        meditationTable.contentInset = UIEdgeInsets(top: topPadding, left: 0, bottom: 0, right: 0)
+        
+        meditationTable.rowHeight = 140.0
+    }
+    
+    private func setupMeditationTable() {
         meditationTable.dataSource = self
         meditationTable.delegate = self
-        
-        let verticalInset = (view.bounds.height - meditationTable.contentSize.height) * 0.70
-                meditationTable.contentInset = UIEdgeInsets(top: verticalInset, left: 0, bottom: verticalInset, right: 0)
-        
-        let forestGreenColor = UIColor(red: 34/255.0, green: 56/255.0, blue: 34/255.0, alpha: 1.0)
-        
-        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backPressed))
-        
-        backButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: forestGreenColor], for: .normal)
-        
-                navigationItem.leftBarButtonItem = backButton
     }
 }
+
 extension MeditationViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
-        
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return meditationSections.count
     }
 
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MeditationCell", for: indexPath)
-            let selectedMeditation = meditationSections[indexPath.row]
-            var content = cell.defaultContentConfiguration()
-            
-            if let customFont = UIFont(name: "AvenirNext-DemiBold", size: 22.0) {
-                content.textProperties.font = customFont
-            } else {
-                content.textProperties.font = UIFont.systemFont(ofSize: 22.0, weight: .bold)
-            }
-            
-            content.textProperties.color = UIColor.white
-            content.text = selectedMeditation
-            content.textProperties.alignment = .center
-            cell.contentConfiguration = content
-
-                    return cell
-                }
-
+        let cell = configureMeditationCell(tableView, indexPath)
+        cell.accessibilityIdentifier = "meditation_\(indexPath.row)"
+        return cell
+    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-       var selectedArray: [PracticeLinks] = []
-       
-        switch indexPath.row {
-                case 0:
-                    selectedArray = practiceData.morningMeditation.map {
-                        return PracticeLinks(title: $0.title, youtubeLink: $0.link)
-                    }
-                case 1:
-                    selectedArray = practiceData.dailyMeditation.map {
-                        return PracticeLinks(title: $0.title, youtubeLink: $0.link)
-                    }
-                case 2:
-                    selectedArray = practiceData.beforeSleepMeditation.map {
-                        return PracticeLinks(title: $0.title, youtubeLink: $0.link)
-                    }
-                default:
-                    break
-                }
-       
-       let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       if let detailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsTableViewController") as? DetailsTableViewController {
-           detailsViewController.activitiesArray = selectedArray
-           detailsViewController.practiceType = practiceType
-           self.navigationController?.pushViewController(detailsViewController, animated: true)
-       }
-   }
-    @objc func backPressed() {
-            // Handle the back navigation item press
-            // For example, navigate back to HomeViewController
-            navigationController?.popToRootViewController(animated: true)
+        navigateToDetailsViewController(indexPath)
+    }
+
+    private func configureMeditationCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MeditationCell", for: indexPath)
+        let selectedMeditation = meditationSections[indexPath.row]
+        var content = cell.defaultContentConfiguration()
+        cell.selectionStyle = .none
+        configureFont(in: &content)
+        configureTextProperties(in: &content, with: selectedMeditation)
+        cell.contentConfiguration = content
+
+        return cell
+    }
+
+    private func configureFont(in content: inout UIListContentConfiguration) {
+        if let customFont = UIFont(name: "AvenirNext-DemiBold", size: 22.0) {
+            content.textProperties.font = customFont
+        } else {
+            content.textProperties.font = UIFont.systemFont(ofSize: 22.0, weight: .bold)
         }
+    }
+
+    private func configureTextProperties(in content: inout UIListContentConfiguration, with text: String) {
+        content.textProperties.color = UIColor.white
+        content.text = text
+        content.textProperties.alignment = .center
+    }
+
+    private func navigateToDetailsViewController(_ indexPath: IndexPath) {
+        var selectedArray: [PracticeLinks] = []
+
+        switch indexPath.row {
+        case 0:
+            selectedArray = mapPracticeLinks(practiceData.morningMeditation)
+        case 1:
+            selectedArray = mapPracticeLinks(practiceData.dailyMeditation)
+        case 2:
+            selectedArray = mapPracticeLinks(practiceData.beforeSleepMeditation)
+        default:
+            break
+        }
+
+        instantiateDetailsViewController(selectedArray)
+    }
+
+    private func mapPracticeLinks(_ meditationArray: [Meditation]) -> [PracticeLinks] {
+        return meditationArray.map { PracticeLinks(title: $0.title, youtubeLink: $0.link) }
+    }
+
+    private func instantiateDetailsViewController(_ selectedArray: [PracticeLinks]) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let detailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsTableViewController") as? DetailsTableViewController {
+            detailsViewController.activitiesArray = selectedArray
+            detailsViewController.practiceType = practiceType
+            self.navigationController?.pushViewController(detailsViewController, animated: true)
+        }
+    }
 }
