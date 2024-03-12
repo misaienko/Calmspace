@@ -19,10 +19,9 @@ class MeditationViewController: UIViewController {
         setupMeditationTable()
         
         let topPadding: CGFloat = 100.0
-
         meditationTable.contentInset = UIEdgeInsets(top: topPadding, left: 0, bottom: 0, right: 0)
-        
         meditationTable.rowHeight = 140.0
+        self.view.accessibilityIdentifier = "MeditationViewController"
     }
     
     private func setupMeditationTable() {

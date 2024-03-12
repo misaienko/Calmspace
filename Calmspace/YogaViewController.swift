@@ -11,7 +11,7 @@ class YogaViewController: UIViewController {
     
     @IBOutlet weak var yogaTable: UITableView!
     
-    var yogaSections = ["Beginner & All Levels", "Medium & Advanced Levels"]
+    var yogaSections = ["Yoga: Beginner & All Levels", "Yoga: Medium & Advance Levels"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class YogaViewController: UIViewController {
         let topPadding: CGFloat = 150.0
         yogaTable.contentInset = UIEdgeInsets(top: topPadding, left: 0, bottom: 0, right: 0)
         yogaTable.rowHeight = 140.0
-        
+        self.view.accessibilityIdentifier = "YogaViewController"
     }
     
     private func setupYogaTable() {

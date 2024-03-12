@@ -96,6 +96,7 @@ class AdviceViewController: UIViewController {
 }
 
 struct Advice {
+    
     struct Modifier: OptionSet {
         let rawValue: Int
         

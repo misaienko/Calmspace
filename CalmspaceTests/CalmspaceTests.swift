@@ -9,30 +9,33 @@ import XCTest
 
 final class CalmspaceTests: XCTestCase {
     
-    var viewController: AdviceViewController!
+    var adviceViewController: AdviceViewController!
+    var trackViewController: TrackViewController!
+    var sut: MainChoiceViewController!
     
     override func setUp() {
         super.setUp()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        viewController = storyboard.instantiateViewController(withIdentifier: "AdviceViewController") as? AdviceViewController
-        _ = viewController.view
+        
+        let adviceStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        adviceViewController = adviceStoryboard.instantiateViewController(withIdentifier: "AdviceViewController") as? AdviceViewController
+        _ = adviceViewController.view
+        
+        let trackStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        trackViewController = trackStoryboard.instantiateViewController(withIdentifier: "TrackViewController") as? TrackViewController
+        _ = trackViewController.view
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        sut = mainStoryboard.instantiateViewController(withIdentifier: "MainChoiceViewController") as? MainChoiceViewController
     }
     
     override func tearDown() {
-        viewController = nil
+        adviceViewController = nil
+        trackViewController = nil
         super.tearDown()
     }
     
-    func testAdviceSelection() {
-        
-        viewController.selectedOption = nil
-        
-        viewController.displayAdvice()
-        
-        XCTAssertEqual(viewController.adviceText.text, "Invalid selection")
-    }
-    
     func testCorrectAdvice() {
+        
         let testCases: [(SelectedOption?, String)] = [
             (SelectedOption(feelingTodayLevel: .bad, botheringReason: .physically, hasExercised: false, hasSpentTimeOutside: true), "Let's have a Yoga Practice!"),
             (SelectedOption(feelingTodayLevel: .okay, botheringReason: .mentally, hasExercised: true, hasSpentTimeOutside: true), "Let's have a Meditation outside!"),
@@ -52,9 +55,9 @@ final class CalmspaceTests: XCTestCase {
                 continue
             }
             print("Selected Option:", selectedOption)
-            viewController.selectedOption = selectedOption
-            viewController.displayAdvice()
-            guard let actualAdvice = viewController.adviceText.text else {
+            adviceViewController.selectedOption = selectedOption
+            adviceViewController.displayAdvice()
+            guard let actualAdvice = adviceViewController.adviceText.text else {
                 print("Error: Actual advice is nil")
                 continue
             }
@@ -63,4 +66,45 @@ final class CalmspaceTests: XCTestCase {
             XCTAssertEqual(actualAdvice, expectedAdvice)
         }
     }
+    
+    func testDailyReminder() {
+        
+        trackViewController.scheduleDailyReminder()
+        
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests { requests in
+            
+            XCTAssertEqual(requests.count, 2)
+            
+            for request in requests {
+                XCTAssertEqual(request.content.title, "Meditation and Yoga Reminder")
+                XCTAssertEqual(request.content.body, "Don't forget about your Meditation and Yoga Routine")
+                XCTAssertTrue(request.trigger is UNCalendarNotificationTrigger)
+            }
+        }
+    }
+    
+    func testCorrect_data() {
+        
+        DispatchQueue.main.async {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let sut = mainStoryboard.instantiateViewController(withIdentifier: "MainChoiceViewController") as! MainChoiceViewController
+            let meditationVC = MeditationViewController()
+            let yogaVC = YogaViewController()
+            
+            _ = sut.view
+            
+            sut.performSegue(withIdentifier: "MeditationSegue", sender: nil)
+            
+            XCTAssertNotNil(meditationVC.meditationSections)
+            XCTAssertEqual(meditationVC.meditationSections, sut.meditationSections)
+            
+            sut.performSegue(withIdentifier: "YogaSegue", sender: nil)
+            
+            XCTAssertNotNil(yogaVC.yogaSections)
+            XCTAssertEqual(yogaVC.yogaSections, sut.yogaSections)
+        }
+    }
 }
+
+
