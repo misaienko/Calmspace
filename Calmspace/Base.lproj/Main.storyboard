@@ -511,10 +511,10 @@
             </objects>
             <point key="canvasLocation" x="4350" y="-171"/>
         </scene>
-        <!--Track-->
+        <!--TrackViewController-->
         <scene sceneID="w6Z-Ok-J3x">
             <objects>
-                <viewController restorationIdentifier="TrackViewController" storyboardIdentifier="TrackViewController" id="ObT-WO-En4" customClass="TrackViewController" customModule="Calmspace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="TrackViewController" storyboardIdentifier="TrackViewController" title="TrackViewController" id="ObT-WO-En4" customClass="TrackViewController" customModule="Calmspace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FY4-3J-7Ec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -591,7 +591,7 @@
                             <constraint firstItem="mau-bg-IZd" firstAttribute="trailing" secondItem="9CT-A9-V9m" secondAttribute="trailing" constant="16" id="vmd-BN-8y7"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Track" image="figure.dance" catalog="system" id="3m4-fz-eIH">
+                    <tabBarItem key="tabBarItem" tag="1" title="Track" image="figure.dance" catalog="system" id="3m4-fz-eIH">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <connections>

@@ -18,6 +18,17 @@ final class CalmspaceUITests: XCTestCase {
         app.launch()
     }
     
+    func testNavigateToTrackViewController() {
+        print("Waiting for 'Track' Button to exist")
+        XCTAssertTrue(app.buttons["Track"].waitForExistence(timeout: 10), "Failed to find 'Track' Button")
+
+        print("Tapping 'Track' Button")
+        app.buttons["Track"].tap()
+
+        print("Checking navigation to 'TrackViewController'")
+        XCTAssertTrue(app.otherElements["TrackViewController"].waitForExistence(timeout: 10), "Failed to navigate to 'TrackViewController'")
+    }
+    
     private func navigateToQuestionsView() {
         XCTAssertTrue(app.buttons["suggestActivity"].waitForExistence(timeout: 10))
         app.buttons["suggestActivity"].tap()

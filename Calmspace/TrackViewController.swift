@@ -34,6 +34,9 @@ class TrackViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         calendarView.layer.masksToBounds = true
         calendarView.appearance.headerTitleOffset = CGPoint(x: 3, y: 15)
         
+            self.title = "Track"
+            self.navigationController?.navigationBar.accessibilityIdentifier = "Track"
+        
         setupNavigationButtons()
         
         scheduleDailyReminder()
