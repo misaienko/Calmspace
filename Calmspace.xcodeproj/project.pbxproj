@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6796A3A704189A2E0CDC5C1B /* Pods_Calmspace_CalmspaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5458CB3C0831EEFC52B90FEA /* Pods_Calmspace_CalmspaceUITests.framework */; };
 		8407E5C72B185DEE00E322F3 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E5C62B185DEE00E322F3 /* TrackViewController.swift */; };
 		841049812B2142F70081A34B /* YogaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841049802B2142F70081A34B /* YogaViewController.swift */; };
 		842C4BDC2ADF456700EB9613 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C4BDB2ADF456700EB9613 /* DisplayViewController.swift */; };
@@ -17,20 +16,20 @@
 		845B54A92AE7373300AD844E /* Practice.json in Resources */ = {isa = PBXBuildFile; fileRef = 845B54A82AE7373300AD844E /* Practice.json */; };
 		84637CC72AE4E2CC00797103 /* MainChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84637CC62AE4E2CC00797103 /* MainChoiceViewController.swift */; };
 		8479C6DC2B0C2B2A0022DC50 /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9E7442B09AD5800C50648 /* MeditationViewController.swift */; };
+		8484456E2BCB370F0072EB39 /* CalmspaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE362A64AF580098F198 /* CalmspaceTests.swift */; };
 		848FEE202A64AF540098F198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE1F2A64AF540098F198 /* AppDelegate.swift */; };
 		848FEE222A64AF540098F198 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE212A64AF540098F198 /* SceneDelegate.swift */; };
-		848FEE242A64AF540098F198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE232A64AF540098F198 /* ViewController.swift */; };
 		848FEE292A64AF580098F198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848FEE282A64AF580098F198 /* Assets.xcassets */; };
 		848FEE2C2A64AF580098F198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848FEE2A2A64AF580098F198 /* LaunchScreen.storyboard */; };
-		848FEE372A64AF580098F198 /* CalmspaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE362A64AF580098F198 /* CalmspaceTests.swift */; };
 		848FEE412A64AF580098F198 /* CalmspaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE402A64AF580098F198 /* CalmspaceUITests.swift */; };
 		848FEE432A64AF580098F198 /* CalmspaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FEE422A64AF580098F198 /* CalmspaceUITestsLaunchTests.swift */; };
 		84979B9D2B13EF0200971AB1 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B9C2B13EF0200971AB1 /* AdviceViewController.swift */; };
 		84DDE9E42AD8896A00B59721 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDE9E32AD8896A00B59721 /* DetailsTableViewController.swift */; };
 		84DECAA02B279F970054A5AC /* FirstAskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DECA9F2B279F970054A5AC /* FirstAskViewController.swift */; };
 		84FEF7742B130EC700D42DE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEF7732B130EC700D42DE0 /* HomeViewController.swift */; };
-		D3237FEE2082C849323EFDD7 /* Pods_CalmspaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABCD0770F10591499E3DF6E /* Pods_CalmspaceTests.framework */; };
-		D5029F59689C5FEB11423B61 /* Pods_Calmspace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D0A4E0B7EEA11B8380B7AC /* Pods_Calmspace.framework */; };
+		C23759C7AA5F7FD52819AE96 /* Pods_CalmspaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C7EF65497B5B8B4B06123C /* Pods_CalmspaceTests.framework */; };
+		ED2BF1620EBBBCD56331447D /* Pods_Calmspace_CalmspaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51632B81B2022C9D4BCC667A /* Pods_Calmspace_CalmspaceUITests.framework */; };
+		EDFEE19A1C0A5C0DBD154AD9 /* Pods_Calmspace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35CA067B7AB7C319388C6FA /* Pods_Calmspace.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,13 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		091D0D00ACCD5FB6BED98089 /* Pods-CalmspaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalmspaceTests.debug.xcconfig"; path = "Target Support Files/Pods-CalmspaceTests/Pods-CalmspaceTests.debug.xcconfig"; sourceTree = "<group>"; };
-		09708368207F9566DE9E4B58 /* Pods-Calmspace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calmspace.debug.xcconfig"; path = "Target Support Files/Pods-Calmspace/Pods-Calmspace.debug.xcconfig"; sourceTree = "<group>"; };
-		0AA9A29DE0B58E7D4767FF7A /* Pods-CalmspaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalmspaceTests.release.xcconfig"; path = "Target Support Files/Pods-CalmspaceTests/Pods-CalmspaceTests.release.xcconfig"; sourceTree = "<group>"; };
-		2ABCD0770F10591499E3DF6E /* Pods_CalmspaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalmspaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		434248A133C5CA2514DD796B /* Pods-Calmspace-CalmspaceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calmspace-CalmspaceUITests.release.xcconfig"; path = "Target Support Files/Pods-Calmspace-CalmspaceUITests/Pods-Calmspace-CalmspaceUITests.release.xcconfig"; sourceTree = "<group>"; };
-		5458CB3C0831EEFC52B90FEA /* Pods_Calmspace_CalmspaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calmspace_CalmspaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		59D0A4E0B7EEA11B8380B7AC /* Pods_Calmspace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calmspace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51632B81B2022C9D4BCC667A /* Pods_Calmspace_CalmspaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calmspace_CalmspaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73BB179B469CB93D37E2902B /* Pods-Calmspace-CalmspaceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calmspace-CalmspaceUITests.release.xcconfig"; path = "Target Support Files/Pods-Calmspace-CalmspaceUITests/Pods-Calmspace-CalmspaceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7C421B393F4360A78DE00264 /* Pods-Calmspace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calmspace.debug.xcconfig"; path = "Target Support Files/Pods-Calmspace/Pods-Calmspace.debug.xcconfig"; sourceTree = "<group>"; };
+		7CFB5FC5C67F20649590A0A9 /* Pods-CalmspaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalmspaceTests.debug.xcconfig"; path = "Target Support Files/Pods-CalmspaceTests/Pods-CalmspaceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8407E5C62B185DEE00E322F3 /* TrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
 		841049802B2142F70081A34B /* YogaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaViewController.swift; sourceTree = "<group>"; };
 		842C4BDB2ADF456700EB9613 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
@@ -84,8 +80,11 @@
 		84DECA9F2B279F970054A5AC /* FirstAskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAskViewController.swift; sourceTree = "<group>"; };
 		84E9E7442B09AD5800C50648 /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		84FEF7732B130EC700D42DE0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		BF31C5A9917A8CDBB500F031 /* Pods-Calmspace-CalmspaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calmspace-CalmspaceUITests.debug.xcconfig"; path = "Target Support Files/Pods-Calmspace-CalmspaceUITests/Pods-Calmspace-CalmspaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D259C30E92096CD1A1A8A956 /* Pods-Calmspace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calmspace.release.xcconfig"; path = "Target Support Files/Pods-Calmspace/Pods-Calmspace.release.xcconfig"; sourceTree = "<group>"; };
+		89B53E1373DFD970428E7D46 /* Pods-Calmspace-CalmspaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calmspace-CalmspaceUITests.debug.xcconfig"; path = "Target Support Files/Pods-Calmspace-CalmspaceUITests/Pods-Calmspace-CalmspaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE849D264864144BA8B0AD63 /* Pods-Calmspace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calmspace.release.xcconfig"; path = "Target Support Files/Pods-Calmspace/Pods-Calmspace.release.xcconfig"; sourceTree = "<group>"; };
+		C35CA067B7AB7C319388C6FA /* Pods_Calmspace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calmspace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6C7EF65497B5B8B4B06123C /* Pods_CalmspaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalmspaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D216CFC13B06AC84E3F8C30E /* Pods-CalmspaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalmspaceTests.release.xcconfig"; path = "Target Support Files/Pods-CalmspaceTests/Pods-CalmspaceTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +94,7 @@
 			files = (
 				842C4BE12ADF46BB00EB9613 /* MapKit.framework in Frameworks */,
 				842C4BDF2ADF46B400EB9613 /* WebKit.framework in Frameworks */,
-				D5029F59689C5FEB11423B61 /* Pods_Calmspace.framework in Frameworks */,
+				EDFEE19A1C0A5C0DBD154AD9 /* Pods_Calmspace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3237FEE2082C849323EFDD7 /* Pods_CalmspaceTests.framework in Frameworks */,
+				C23759C7AA5F7FD52819AE96 /* Pods_CalmspaceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6796A3A704189A2E0CDC5C1B /* Pods_Calmspace_CalmspaceUITests.framework in Frameworks */,
+				ED2BF1620EBBBCD56331447D /* Pods_Calmspace_CalmspaceUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,12 +120,12 @@
 		56D10C934CC90DFC2EAF58D3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				09708368207F9566DE9E4B58 /* Pods-Calmspace.debug.xcconfig */,
-				D259C30E92096CD1A1A8A956 /* Pods-Calmspace.release.xcconfig */,
-				BF31C5A9917A8CDBB500F031 /* Pods-Calmspace-CalmspaceUITests.debug.xcconfig */,
-				434248A133C5CA2514DD796B /* Pods-Calmspace-CalmspaceUITests.release.xcconfig */,
-				091D0D00ACCD5FB6BED98089 /* Pods-CalmspaceTests.debug.xcconfig */,
-				0AA9A29DE0B58E7D4767FF7A /* Pods-CalmspaceTests.release.xcconfig */,
+				7C421B393F4360A78DE00264 /* Pods-Calmspace.debug.xcconfig */,
+				AE849D264864144BA8B0AD63 /* Pods-Calmspace.release.xcconfig */,
+				89B53E1373DFD970428E7D46 /* Pods-Calmspace-CalmspaceUITests.debug.xcconfig */,
+				73BB179B469CB93D37E2902B /* Pods-Calmspace-CalmspaceUITests.release.xcconfig */,
+				7CFB5FC5C67F20649590A0A9 /* Pods-CalmspaceTests.debug.xcconfig */,
+				D216CFC13B06AC84E3F8C30E /* Pods-CalmspaceTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -137,9 +136,9 @@
 				84DB5A292B1D91AE00CD8C01 /* FSCalendar.framework */,
 				842C4BE02ADF46BB00EB9613 /* MapKit.framework */,
 				842C4BDE2ADF46B400EB9613 /* WebKit.framework */,
-				59D0A4E0B7EEA11B8380B7AC /* Pods_Calmspace.framework */,
-				5458CB3C0831EEFC52B90FEA /* Pods_Calmspace_CalmspaceUITests.framework */,
-				2ABCD0770F10591499E3DF6E /* Pods_CalmspaceTests.framework */,
+				C35CA067B7AB7C319388C6FA /* Pods_Calmspace.framework */,
+				51632B81B2022C9D4BCC667A /* Pods_Calmspace_CalmspaceUITests.framework */,
+				C6C7EF65497B5B8B4B06123C /* Pods_CalmspaceTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,11 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 848FEE462A64AF580098F198 /* Build configuration list for PBXNativeTarget "Calmspace" */;
 			buildPhases = (
-				EF2E5B68268DD641C5240C27 /* [CP] Check Pods Manifest.lock */,
+				C9B684B89EC92BC6B16CF2F9 /* [CP] Check Pods Manifest.lock */,
 				848FEE182A64AF540098F198 /* Sources */,
 				848FEE192A64AF540098F198 /* Frameworks */,
 				848FEE1A2A64AF540098F198 /* Resources */,
-				47B64D05AF7C349358CC94F2 /* [CP] Embed Pods Frameworks */,
+				2F861A172A4CE2ED997877DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 848FEE492A64AF580098F198 /* Build configuration list for PBXNativeTarget "CalmspaceTests" */;
 			buildPhases = (
-				456F0CA9928ED4932661FF0C /* [CP] Check Pods Manifest.lock */,
+				E37637F0433C99DE2E593A81 /* [CP] Check Pods Manifest.lock */,
 				848FEE2E2A64AF580098F198 /* Sources */,
 				848FEE2F2A64AF580098F198 /* Frameworks */,
 				848FEE302A64AF580098F198 /* Resources */,
@@ -252,11 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 848FEE4C2A64AF580098F198 /* Build configuration list for PBXNativeTarget "CalmspaceUITests" */;
 			buildPhases = (
-				0D41AB0903F726D83439EDF9 /* [CP] Check Pods Manifest.lock */,
+				8DD14961C4735BF40B450249 /* [CP] Check Pods Manifest.lock */,
 				848FEE382A64AF580098F198 /* Sources */,
 				848FEE392A64AF580098F198 /* Frameworks */,
 				848FEE3A2A64AF580098F198 /* Resources */,
-				4D4B62FE683ECB9C418418C0 /* [CP] Embed Pods Frameworks */,
+				CC6530126285227C01538A0A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -340,7 +339,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D41AB0903F726D83439EDF9 /* [CP] Check Pods Manifest.lock */ = {
+		2F861A172A4CE2ED997877DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calmspace/Pods-Calmspace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calmspace/Pods-Calmspace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Calmspace/Pods-Calmspace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DD14961C4735BF40B450249 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -362,63 +378,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		456F0CA9928ED4932661FF0C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CalmspaceTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		47B64D05AF7C349358CC94F2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Calmspace/Pods-Calmspace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Calmspace/Pods-Calmspace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Calmspace/Pods-Calmspace-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D4B62FE683ECB9C418418C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Calmspace-CalmspaceUITests/Pods-Calmspace-CalmspaceUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Calmspace-CalmspaceUITests/Pods-Calmspace-CalmspaceUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Calmspace-CalmspaceUITests/Pods-Calmspace-CalmspaceUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF2E5B68268DD641C5240C27 /* [CP] Check Pods Manifest.lock */ = {
+		C9B684B89EC92BC6B16CF2F9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -440,6 +400,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CC6530126285227C01538A0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calmspace-CalmspaceUITests/Pods-Calmspace-CalmspaceUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calmspace-CalmspaceUITests/Pods-Calmspace-CalmspaceUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Calmspace-CalmspaceUITests/Pods-Calmspace-CalmspaceUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E37637F0433C99DE2E593A81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalmspaceTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -449,7 +448,6 @@
 			files = (
 				84979B9D2B13EF0200971AB1 /* AdviceViewController.swift in Sources */,
 				8479C6DC2B0C2B2A0022DC50 /* MeditationViewController.swift in Sources */,
-				848FEE242A64AF540098F198 /* ViewController.swift in Sources */,
 				84637CC72AE4E2CC00797103 /* MainChoiceViewController.swift in Sources */,
 				848FEE202A64AF540098F198 /* AppDelegate.swift in Sources */,
 				84DDE9E42AD8896A00B59721 /* DetailsTableViewController.swift in Sources */,
@@ -466,7 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848FEE372A64AF580098F198 /* CalmspaceTests.swift in Sources */,
+				8484456E2BCB370F0072EB39 /* CalmspaceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,7 +628,7 @@
 		};
 		848FEE472A64AF580098F198 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09708368207F9566DE9E4B58 /* Pods-Calmspace.debug.xcconfig */;
+			baseConfigurationReference = 7C421B393F4360A78DE00264 /* Pods-Calmspace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -659,7 +657,7 @@
 		};
 		848FEE482A64AF580098F198 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D259C30E92096CD1A1A8A956 /* Pods-Calmspace.release.xcconfig */;
+			baseConfigurationReference = AE849D264864144BA8B0AD63 /* Pods-Calmspace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -688,7 +686,7 @@
 		};
 		848FEE4A2A64AF580098F198 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 091D0D00ACCD5FB6BED98089 /* Pods-CalmspaceTests.debug.xcconfig */;
+			baseConfigurationReference = 7CFB5FC5C67F20649590A0A9 /* Pods-CalmspaceTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -708,7 +706,7 @@
 		};
 		848FEE4B2A64AF580098F198 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AA9A29DE0B58E7D4767FF7A /* Pods-CalmspaceTests.release.xcconfig */;
+			baseConfigurationReference = D216CFC13B06AC84E3F8C30E /* Pods-CalmspaceTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -728,7 +726,7 @@
 		};
 		848FEE4D2A64AF580098F198 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF31C5A9917A8CDBB500F031 /* Pods-Calmspace-CalmspaceUITests.debug.xcconfig */;
+			baseConfigurationReference = 89B53E1373DFD970428E7D46 /* Pods-Calmspace-CalmspaceUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -746,7 +744,7 @@
 		};
 		848FEE4E2A64AF580098F198 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 434248A133C5CA2514DD796B /* Pods-Calmspace-CalmspaceUITests.release.xcconfig */;
+			baseConfigurationReference = 73BB179B469CB93D37E2902B /* Pods-Calmspace-CalmspaceUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

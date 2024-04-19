@@ -13,7 +13,13 @@ class FirstAskViewController: UIViewController {
     @IBOutlet weak var answerButton1: UIButton!
     @IBOutlet weak var answerButton2: UIButton!
     @IBOutlet weak var answerButton3: UIButton!
+    
+    @IBOutlet var buttonStackView: UIStackView!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    var buttonWidthConstraint1: NSLayoutConstraint?
+    var buttonWidthConstraint2: NSLayoutConstraint?
+    var buttonWidthConstraint3: NSLayoutConstraint?
     
     var selectedOption: SelectedOption = SelectedOption(feelingTodayLevel: .good, botheringReason: nil, hasExercised: false, hasSpentTimeOutside: false)
     var questionIndex = 1
@@ -29,7 +35,7 @@ class FirstAskViewController: UIViewController {
         answerButton3.accessibilityIdentifier = "answerButton3"
         questionText.accessibilityIdentifier = "questionText"
     }
-    
+
     func setButtonFont(for button: UIButton) {
         if let font = UIFont(name: "AvenirNext-DemiBold", size: 19) {
             button.titleLabel?.font = font

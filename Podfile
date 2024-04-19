@@ -1,12 +1,23 @@
-# Uncomment the next line to define a global platform for your project
- platform :ios, '16.4'
+# Podfile
+
+platform :ios, '16.4'
 
 target 'Calmspace' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for Calmspace
- pod 'FSCalendar'
+  pod 'FSCalendar'
+
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      if target.name == "FSCalendar"
+        target.build_configurations.each do |config|
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.4'
+        end
+      end
+    end
+  end
+
   target 'CalmspaceTests' do
     inherit! :search_paths
     # Pods for testing
@@ -15,5 +26,4 @@ target 'Calmspace' do
   target 'CalmspaceUITests' do
     # Pods for testing
   end
-
 end

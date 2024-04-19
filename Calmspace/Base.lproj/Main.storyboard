@@ -139,15 +139,15 @@
                         <viewLayoutGuide key="safeArea" id="FhE-TK-8lN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="43S-yP-qwU" firstAttribute="top" secondItem="njz-3X-bX8" secondAttribute="bottom" constant="55" id="6WV-ka-T95"/>
                             <constraint firstItem="njz-3X-bX8" firstAttribute="top" secondItem="FhE-TK-8lN" secondAttribute="top" constant="116" id="GCn-QN-E1n"/>
                             <constraint firstItem="ww5-to-v21" firstAttribute="trailing" secondItem="FhE-TK-8lN" secondAttribute="trailing" id="JfE-1f-in2"/>
-                            <constraint firstItem="FhE-TK-8lN" firstAttribute="trailing" secondItem="43S-yP-qwU" secondAttribute="trailing" constant="80" id="PAW-iq-wHi"/>
                             <constraint firstItem="FhE-TK-8lN" firstAttribute="trailing" secondItem="njz-3X-bX8" secondAttribute="trailing" constant="30" id="U6U-PI-StB"/>
+                            <constraint firstItem="FhE-TK-8lN" firstAttribute="trailing" secondItem="43S-yP-qwU" secondAttribute="trailing" constant="80" id="XWl-kJ-J6l"/>
                             <constraint firstItem="njz-3X-bX8" firstAttribute="leading" secondItem="FhE-TK-8lN" secondAttribute="leading" constant="30" id="ZMW-Yb-yzS"/>
                             <constraint firstItem="ww5-to-v21" firstAttribute="top" secondItem="KGl-eP-GR0" secondAttribute="top" id="aHc-lg-x4M"/>
                             <constraint firstAttribute="bottom" secondItem="ww5-to-v21" secondAttribute="bottom" id="kpY-Ts-bRD"/>
-                            <constraint firstItem="43S-yP-qwU" firstAttribute="leading" secondItem="FhE-TK-8lN" secondAttribute="leading" constant="80" id="l7A-MA-Akn"/>
+                            <constraint firstItem="43S-yP-qwU" firstAttribute="top" secondItem="njz-3X-bX8" secondAttribute="bottom" constant="55" id="kwi-zE-xVl"/>
+                            <constraint firstItem="43S-yP-qwU" firstAttribute="leading" secondItem="FhE-TK-8lN" secondAttribute="leading" constant="80" id="plC-JX-7ts"/>
                             <constraint firstItem="ww5-to-v21" firstAttribute="leading" secondItem="FhE-TK-8lN" secondAttribute="leading" id="sYj-ic-Lbi"/>
                         </constraints>
                     </view>
@@ -157,13 +157,14 @@
                         <outlet property="answerButton2" destination="gtd-Gs-qcG" id="0ac-DM-I0Z"/>
                         <outlet property="answerButton3" destination="Mgu-l2-0Wq" id="hxH-Kf-FpT"/>
                         <outlet property="backgroundImageView" destination="ww5-to-v21" id="ctr-ta-Bjj"/>
+                        <outlet property="buttonStackView" destination="43S-yP-qwU" id="2qn-Uk-7ye"/>
                         <outlet property="questionText" destination="njz-3X-bX8" id="5t0-JY-GCO"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="AdviceSegue" id="yBk-rK-hPQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jf0-BY-wiz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7268" y="582"/>
+            <point key="canvasLocation" x="7273" y="568"/>
         </scene>
         <!--Advice-->
         <scene sceneID="tne-QT-ifu">

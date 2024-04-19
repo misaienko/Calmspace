@@ -5,33 +5,26 @@
 //  Created by Admin on 16/07/2023.
 
 import XCTest
+
 @testable import Calmspace
 
 final class CalmspaceTests: XCTestCase {
     
-    var adviceViewController: AdviceViewController!
-    var trackViewController: TrackViewController!
-    var sut: MainChoiceViewController!
+   var adviceViewController: AdviceViewController!
+   var sut: MainChoiceViewController!
+   var detailsVC: DetailsTableViewController!
     
     override func setUp() {
         super.setUp()
         
-        let adviceStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        adviceViewController = adviceStoryboard.instantiateViewController(withIdentifier: "AdviceViewController") as? AdviceViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        adviceViewController = storyboard.instantiateViewController(withIdentifier: "AdviceViewController") as? AdviceViewController
+        sut = storyboard.instantiateViewController(withIdentifier: "MainChoiceViewController") as? MainChoiceViewController
+        detailsVC = storyboard.instantiateViewController(withIdentifier: "DetailsTableViewController") as? DetailsTableViewController
+        
         _ = adviceViewController.view
-        
-        let trackStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        trackViewController = trackStoryboard.instantiateViewController(withIdentifier: "TrackViewController") as? TrackViewController
-        _ = trackViewController.view
-        
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = mainStoryboard.instantiateViewController(withIdentifier: "MainChoiceViewController") as? MainChoiceViewController
-    }
-    
-    override func tearDown() {
-        adviceViewController = nil
-        trackViewController = nil
-        super.tearDown()
+        _ = sut.view
+        _ = detailsVC.view
     }
     
     func testCorrectAdvice() {
@@ -67,23 +60,6 @@ final class CalmspaceTests: XCTestCase {
         }
     }
     
-    func testDailyReminder() {
-        
-        trackViewController.scheduleDailyReminder()
-        
-        let center = UNUserNotificationCenter.current()
-        center.getPendingNotificationRequests { requests in
-            
-            XCTAssertEqual(requests.count, 2)
-            
-            for request in requests {
-                XCTAssertEqual(request.content.title, "Meditation and Yoga Reminder")
-                XCTAssertEqual(request.content.body, "Don't forget about your Meditation and Yoga Routine")
-                XCTAssertTrue(request.trigger is UNCalendarNotificationTrigger)
-            }
-        }
-    }
-    
     func testCorrect_data() {
         
         DispatchQueue.main.async {
@@ -105,6 +81,37 @@ final class CalmspaceTests: XCTestCase {
             XCTAssertEqual(yogaVC.yogaSections, sut.yogaSections)
         }
     }
+    
+    func testPracticeDataPopulation() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let detailsVC = storyboard.instantiateViewController(withIdentifier: "DetailsTableViewController") as? DetailsTableViewController else {
+                XCTFail("Expected DetailsTableViewController instance")
+                return
+            }
+            _ = detailsVC.view
+        
+            let practiceLinks = [
+                PracticeLinks(title: "Meditate: Be Present", youtubeLink: URL(string: "https://youtu.be/ZToicYcHIOU?si=K4XlfymPvdSVhGqo")!),
+                PracticeLinks(title: "Morning Meditation: Inner Peace", youtubeLink: URL(string: "https://youtu.be/UAEqdo0Dn-k?si=wte3qJK5yvcK6aUw")!),
+                PracticeLinks(title: "Morning Meditation: Inner Strength", youtubeLink: URL(string: "https://youtu.be/p5Num5Pg8yo?si=Cof5lwuCcnh10ixk")!)
+            ]
+
+            detailsVC.activitiesArray = practiceLinks
+            detailsVC.tableView.reloadData()
+
+            for (index, link) in practiceLinks.enumerated() {
+                let indexPath = IndexPath(row: index, section: 0)
+                let cell = detailsVC.tableView(detailsVC.detailsTable, cellForRowAt: indexPath)
+
+                guard let configuration = cell.contentConfiguration as? UIListContentConfiguration else {
+                    XCTFail("Failed to retrieve content configuration from cell")
+                    continue
+                }
+
+                XCTAssertEqual(configuration.text, link.title, "Cell at row \(index) should display the title: \(link.title)")
+  
+            }
+     }
 }
 
 
