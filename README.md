@@ -21,14 +21,18 @@ An app includes both Unit and UI Tests.
 ### Then 'Let's Do It' button is triggered - a screen with Practice Choice displayed
 <img src="images/Screenshot_2024-04-27_at_14.13.54.png" alt="MainChoicescreen" title="MainChoicescreen" width="400" height="650">
 
-### When a user decides on a practice the screen with several relevant sections will appear 
+### When a user decides on a practice - the screen with several relevant sections will appear 
 <img src="images/Screenshot_2024-04-27_at_14.14.06.png" alt="MainChoicescreen" title="MainChoicescreen" width="400" height="650">
 
 ### The next screen will show the last choice to make, after that - the Practice starts
 <img src="images/Screenshot_2024-04-27_at_14.14.35.png" alt="MainChoicescreen" title="MainChoicescreen" width="400" height="650">
 
 ### It's also possible to track the Progress 
-<img src=" " alt="MainChoicescreen" title="MainChoicescreen" width="400" height="650">
+<img src="images/Screenshot_2024-04-27_at_15.15.29.png" alt="MainChoicescreen" title="MainChoicescreen" width="400" height="650">
+
+### Thanks for checking my Project -  Don't hesitate to Run it!
+
+
 
 
 
