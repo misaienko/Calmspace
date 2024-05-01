@@ -8,7 +8,11 @@ An app includes both Unit and UI Tests.
 
 **Swift language concepts** used in this project include but are not limited to: Enums and Structs, Custom Methods and Error Handling, Optional Binding, Complex Control Flow, Pattern Matching, Closure-Based Actions, and JSON Decoding.
 
-Some examples of an app screens:
+**Some examples of an app screens:**
+
+### The first view the user sees, here is where an adventure begins 
+
+<img src="images/Screenshot_2024-04-27_at_14.13.29.png" alt="Homescreen" title="Homescreen" width="400" height="650">
 
 
 
