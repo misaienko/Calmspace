@@ -14,7 +14,9 @@ An app includes both Unit and UI Tests.
 
 <img src="images/Screenshot_2024-04-27_at_14.13.29.png" alt="Homescreen" title="Homescreen" width="400" height="650">
 
+### After a user answers several questions intended to determine a perfect practice - the Advice screen appears. 
 
+ 
 
 
 
