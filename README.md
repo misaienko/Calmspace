@@ -24,7 +24,7 @@ An app includes both Unit and UI Tests.
 ### When a user decides on a practice the screen with several relevant sections will appear 
 <img src="images/Screenshot_2024-04-27_at_14.14.06.png" alt="MainChoicescreen" title="MainChoicescreen" width="400" height="650">
 
-### The next screen will show the last choice to make
+### The next screen will show the last choice to make after that finally the Practice starts
 <img src="
 
 
